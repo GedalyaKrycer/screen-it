@@ -1,14 +1,20 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Header from './components/Header/Header';
+import Filter from './components/Filter/Filter';
+import ResultRow from './components/ResultRow/ResultRow';
+import Stars from './components/Stars/Stars';
+import EditModal from './components/EditModal/EditModal';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Screen it</h1>
-      <h2>Death Becomes Her</h2>
-      <h3>Comedy</h3>
-      <p>Name of the movie</p>
-    </div>
+    <>
+      <Header />
+      <Filter />
+      <ResultRow />
+      <Stars />
+      <EditModal />
+    </>
   );
 }
 
