@@ -9,7 +9,11 @@ const Filter = () => {
                 <div className="filter__input-group">
                     <label className="filter__label">
                         Name
-                        <input type="text" placeholder="Name of the movie" />
+                        <input
+                            className="filter__input"
+                            type="text"
+                            placeholder="Name of the movie"
+                        />
                     </label>
                 </div>
 

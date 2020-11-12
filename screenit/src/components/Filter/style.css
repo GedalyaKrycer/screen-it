@@ -1,0 +1,22 @@
+.filter {
+    padding: 40px;
+}
+
+.filter__input-group {
+    margin-bottom: 24px;
+}
+
+.filter__label {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+}
+
+.filter__input {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  padding: 19px 24px;
+  border-radius: 8px;
+
+}
