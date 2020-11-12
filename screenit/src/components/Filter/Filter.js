@@ -4,7 +4,7 @@ import './style.css';
 const Filter = () => {
     return (
         <>
-            <p>Filter</p>
+            <p>EditModal</p>
         </>
     )
 }

@@ -3,9 +3,9 @@ import './style.css';
 
 const Header = () => {
     return (
-        <>
-            <p>Header</p>
-        </>
+        <header>
+            <h1>Screen it</h1>
+        </header>
     )
 }
 
