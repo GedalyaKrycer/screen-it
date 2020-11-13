@@ -1,8 +1,6 @@
 import React from 'react';
 import './style.css';
 
-
-
 const FilterValidation = ({ nameErrorState, categoryErrorState, ratingErrorState }) => {
 
 

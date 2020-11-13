@@ -39,19 +39,22 @@ const Filter = () => {
             return setRatingError(true);
         }
 
+        // Reset errors to turn off
         setMoveNameError(false);
         setCategoryError(false);
 
+        // Adds all new input values to an array state
         setResultsArray((resultsArray) => [...resultsArray, {
             movieName,
             category,
             rating
         }])
+
+        // Resets all input values
         setMoveName('');
         setCategory('');
         setRating('');
-
-    }
+    };
 
 
     return (
@@ -82,7 +85,8 @@ const Filter = () => {
                     <select
                         value={category}
                         onChange={(e) => setCategory(e.currentTarget.value)}
-                        className={`filter__select ${!category ? "filter__select--active" : null}`}>
+                        className={`filter__select 
+                        ${!category ? "filter__select--active" : null}`}>
                         <option value="default">Select a category</option>
                         <option value="Action">Action</option>
                         <option value="Comedy">Comedy</option>
@@ -99,9 +103,7 @@ const Filter = () => {
                 {/* Rating */}
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
-                    <RatingStars
-                        disableStar={false}
-                    />
+                    <RatingStars disableStar={false} />
 
                 </div>
 
