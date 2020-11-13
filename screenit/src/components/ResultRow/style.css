@@ -36,7 +36,7 @@ Table Of Contents
 }
 
 .result-row--slide {
-    transform: translateX(-150px);
+    transform: translateX(-250px);
 }
 
 
@@ -74,11 +74,8 @@ Table Of Contents
     margin: 0;
 }
 
-.result-row__tools {
-    background: var(--grey4);
-    display: grid;
-    justify-content: end;
-    align-items: center;
+.result-row__tool-wrapper {
+    background: var(--grey3);
     height: 100%;
     width: 100%;
     z-index: 1;
@@ -86,10 +83,22 @@ Table Of Contents
     top: 0;
     left: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.result-row__tools {
+    display: grid;
+    grid-template-columns: 68px 68px;
+    grid-gap: 24px;
+    justify-content: end;
+    align-items: center;
+     position: absolute;
+    right: 40px;
+
 }
 
 .result-row__tools-icon {
-    margin-right: 40px;
     width: 25px;
     height: 28px;
     fill: var(--primary);
@@ -97,6 +106,8 @@ Table Of Contents
     padding: 20px;
     border-radius: 60px;
     box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.15);
+    display: inline-block;
+   
 }
 
 
@@ -112,7 +123,6 @@ Table Of Contents
     .result-row__tools {
         max-width: 700px;
         margin: auto;
-
     }
 
     
