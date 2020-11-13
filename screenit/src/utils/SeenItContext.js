@@ -12,14 +12,18 @@ export function SeenItProvider({ children }) {
     // Stores state for the star rating
     const [rating, setRating] = useState(null);
 
+    // Stores state for the star rating hovering
+    const [starHover, setStarHover] = useState(null);
+
 
 
     return (
-
         <SeenItContext.Provider
             value={{
                 rating,
-                setRating
+                setRating,
+                starHover,
+                setStarHover
             }}
         >
             {children}

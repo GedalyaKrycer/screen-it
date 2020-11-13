@@ -52,7 +52,7 @@ const Filter = () => {
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
                     <RatingStars
-                        disableStar={false}
+                        disableStar={true}
                     />
 
                 </div>
