@@ -18,8 +18,31 @@ Table Of Contents
     grid-gap: 24px;
     grid-template-columns: 64px 1fr 169px;
     align-items: center;
+    border-bottom: 1px solid var(--grey3);
 }
 
+
+.result__avatar {
+    background: var(--primary);
+    color: white;
+    text-transform: uppercase;
+    height: 64px;
+    width: 64px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.result__movie-name {
+    margin: 0 0 6px;
+}
+
+.result__category {
+    color: var(--grey1);
+    margin: 0;
+}
 
 
 

@@ -9,34 +9,24 @@ const ResultRow = () => {
 
     return (
         <>
-            {/* {
+            {
                 resultsArray.map((result, index) => {
                     return <div
                         key={result.movieName + index}
                         className="result">
-                        <span>DBH</span>
-                        <h2>{result.movieName}</h2>
-                        <p>{result.category}</p>
-                        <h3>{result.rating}</h3>
+                        <span className="result__avatar">Dbh</span>
 
+                        <div>
+                            <h2 className="result__movie-name">{result.movieName.trim('')}</h2>
+                            <h3 className="result__category">{result.category}</h3>
+                        </div>
+                        <RatingStars disableStar={true} />
                     </div>
                 })
-            } */}
+            }
 
 
-            <div
-                // key={result.movieName + index}
-                className="result">
-                <span>DBH</span>
-                <div>
-                    <h2>Death Becomes Her</h2>
-                    <h3>Comedy</h3>
-                </div>
-
-                <RatingStars disableStar={true} />
-
-
-            </div>
+            {/* <h3>{result.rating}</h3> */}
         </>
     )
 }
