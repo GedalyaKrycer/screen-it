@@ -1,0 +1,29 @@
+.rating {
+    display: grid;
+    grid-gap: 11px;
+    grid-template-columns: repeat(5, 25px);
+    align-items: center;
+}
+
+.rating__input-radio {
+    display: none;
+}
+
+.rating__star {
+    cursor: pointer;
+    transition: ease-in-out .3s;
+    fill: var(--grey2);
+}
+
+/* .rating__star:hover {
+    transform: scale(1.2);
+    fill: var(--secondary);
+} */
+
+/* .rating__star--inactive {
+    fill: var(--grey2);
+} */
+
+.rating__star--active {
+    fill: var(--secondary);
+}

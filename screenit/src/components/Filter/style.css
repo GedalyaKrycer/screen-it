@@ -36,6 +36,7 @@ Table Of Contents
   font-size: 24px;
   font-weight: 600;
   line-height: 29px;
+  margin: 0;
 }
 
 .filter__select {
@@ -47,7 +48,8 @@ Table Of Contents
   color: var(--grey1);
 }
 
-.filter__input {
+.filter__input,
+.filter__submit-btn {
   padding: 19px 24px;
 }
 
@@ -56,7 +58,8 @@ Table Of Contents
 }
 
 .filter__input,
-.filter__select {
+.filter__select,
+.filter__submit-btn {
   -webkit-appearance: none;
 	-moz-appearance: none;
 	-o-appearance: none;
@@ -70,7 +73,6 @@ Table Of Contents
   min-width: 0;
   
 }
-
 
 .filter__submit-btn {
     width: 100%;
@@ -88,36 +90,6 @@ Table Of Contents
     background-color: var(--primary);
     opacity: .8;
 }
-
-
-
-
-
-
-
-.rating {
-    display: grid;
-    grid-gap: 11px;
-    grid-template-columns: repeat(5, 25px);
-    align-items: center;
-}
-
-/* .rating__input-radio {
-    display: none;
-} */
-
-.rating__star {
-    cursor: pointer;
-    transition: color .2s;
-}
-
-
-
-
-
-
-
-
 
 
 
