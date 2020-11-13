@@ -18,7 +18,7 @@ const ResultRow = () => {
             {
                 resultsArray.map((result, index) => {
 
-                    // Take the movie's name and creates a new array, splitting on the spaces, but stops after 3 items.
+                    // Take the movie's name and creates a new array, splitting on the spaces and special characters, but stops after 3 items.
                     const avatarArray = result.movieName.split(/[^A-Z0-9]/ig).slice(0, 3)
 
                     // Stores the final 1-3 characters from the array
@@ -41,22 +41,24 @@ const ResultRow = () => {
 
                     return <div
                         key={result.movieName + index}
-                        className="result">
-                        <span className={`result__avatar ${avatarLength === 'sm' ? 'result__avatar--sm' : 'result__avatar--lg'}`}>{avatarCharacters}</span>
+                        className="result-row">
+                        <span className={`result-row__avatar ${avatarLength === 'sm' ? 'result-row__avatar--sm' : 'result-row__avatar--lg'}`}>{avatarCharacters}</span>
 
-                        <div>
-                            <h2 className="result__movie-name">{result.movieName.trim('')}</h2>
-                            <h3 className="result__category">{result.category}</h3>
+                        <div className="result-row__txt">
+                            <h2 className="result-row__movie-name">{result.movieName.trim('')}</h2>
+                            <h3 className="result-row__category">{result.category}</h3>
                         </div>
-                        <RatingStarsDisplay
-                            disableStar={true}
-                            stateValues={result.rating} />
+                        <div className="result-row__rating" >
+
+                            <RatingStarsDisplay
+                                disableStar={true}
+                                stateValues={result.rating}
+                            />
+                        </div>
                     </div>
                 })
             }
 
-
-            {/* <h3>{result.rating}</h3> */}
         </>
     )
 }

@@ -123,13 +123,13 @@ Table Of Contents
 }
 
 @media screen and (max-width: 375px) {
-    .filter__input-group--rating {
-        grid-gap: 10px;
-        grid-template-columns: 1fr;
+    .filter__form {
+        padding: 20px;
     }
 
     .filter__input-group--rating {
-        margin: 0 0 40px;
+        margin: 30px 0 40px;
+        grid-gap: 8px;
     }
 
     .filter__input,

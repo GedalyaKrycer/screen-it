@@ -12,7 +12,7 @@ Table Of Contents
 1. Main Code
 ———————————————————————————————————————————————— */
 
-.result {
+.result-row {
     padding: 33px 40px;
     display: grid;
     grid-gap: 24px;
@@ -22,7 +22,7 @@ Table Of Contents
 }
 
 
-.result__avatar {
+.result-row__avatar {
     background: var(--primary);
     color: white;
     text-transform: uppercase;
@@ -35,23 +35,23 @@ Table Of Contents
     font-weight: 500;
 }
 
-.result__avatar--lg {
+.result-row__avatar--lg {
     font-size: 24px;
 }
 
-.result__avatar--sm {
+.result-row__avatar--sm {
     font-size: 16px;
 }
 
-.result__movie-name {
+.result-row__movie-name {
     margin: 0 0 6px;
-    width: 270px;
+    max-width: 270px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.result__category {
+.result-row__category {
     color: var(--grey1);
     margin: 0;
 }
@@ -61,3 +61,34 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
+@media screen and (max-width: 600px) {
+    .result-row__movie-name {
+        max-width: 210px;
+    }
+
+    .result-row {
+        padding: 30px 20px;
+        grid-gap: 15px;
+        grid-template-columns: 45px 1fr;
+        align-items: center;
+        border-bottom: 1px solid var(--grey3);
+    }
+
+    .result-row__avatar {
+        height: 45px;
+        width: 45px;
+    }
+
+
+    .result-row__rating {
+        grid-column: 2 / 2;
+    }
+}
+
+
+
+@media screen and (max-width: 375px) {
+    
+
+    
+}

@@ -6,7 +6,7 @@ const RatingStarsDisplay = ({ stateValues }) => {
 
 
     return (
-        <div className="rating">
+        <div className="ratings">
 
             {/* Creates an array of 5 to duplicate the stars */}
             {[...Array(5)].map((star, index) => {

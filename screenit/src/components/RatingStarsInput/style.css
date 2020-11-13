@@ -11,7 +11,7 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-.rating {
+.ratings {
     display: grid;
     grid-gap: 11px;
     grid-template-columns: repeat(5, 25px);
