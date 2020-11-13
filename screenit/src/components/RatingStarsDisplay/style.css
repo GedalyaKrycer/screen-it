@@ -1,0 +1,49 @@
+/* ————————————————————————————————————————————————
+Table Of Contents
+
+1. Main Code 
+2. Breakpoints 
+
+———————————————————————————————————————————————— */
+
+
+
+/* ————————————————————————————————————————————————
+1. Main Code
+———————————————————————————————————————————————— */
+.rating {
+    display: grid;
+    grid-gap: 11px;
+    grid-template-columns: repeat(5, 25px);
+    align-items: center;
+    justify-self: end;
+}
+
+.rating__input-radio {
+    display: none;
+}
+
+.rating__star {
+    cursor: pointer;
+    transition: ease-in-out .3s;
+}
+
+.rating__star--inactive {
+    fill: var(--grey2);
+}
+
+.rating__star--active {
+    fill: var(--secondary);
+}
+
+
+
+
+/* ————————————————————————————————————————————————
+2. Breakpoints 
+———————————————————————————————————————————————— */
+@media screen and (max-width: 375px) {
+    .rating {
+        justify-self: start;
+    }
+}

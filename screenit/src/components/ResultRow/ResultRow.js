@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars';
+import RatingStarsDisplay from '../RatingStarsDisplay/RatingStarsDisplay';
 import { useSeenItContext } from '../../utils/SeenItContext';
 
 const ResultRow = () => {
@@ -20,7 +20,9 @@ const ResultRow = () => {
                             <h2 className="result__movie-name">{result.movieName.trim('')}</h2>
                             <h3 className="result__category">{result.category}</h3>
                         </div>
-                        <RatingStars disableStar={true} />
+                        <RatingStarsDisplay
+                            disableStar={true}
+                            stateValues={result.rating} />
                     </div>
                 })
             }
