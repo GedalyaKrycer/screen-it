@@ -1,9 +1,9 @@
 .validate-errors {
-    background-color: var(--grey3);
+    border: 2px solid rgba(255, 0, 0, 0.2);
     color: red;
     text-align: center;
     font-size: 16px;
-    padding: 24px;
+    padding: 5px;
     margin-bottom: 24px;
 }
 

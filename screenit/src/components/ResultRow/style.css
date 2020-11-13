@@ -61,6 +61,18 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
+
+@media screen and (min-width: 700px) {
+    .result-row {
+        max-width: 700px;
+        margin: auto;
+        border-right: 1px solid var(--grey3);
+        border-left: 1px solid var(--grey3);
+    }
+    
+
+}
+
 @media screen and (max-width: 600px) {
     .result-row__movie-name {
         max-width: 210px;

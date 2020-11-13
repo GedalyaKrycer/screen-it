@@ -8,7 +8,7 @@ const FilterValidation = ({ nameErrorState, categoryErrorState, ratingErrorState
     let validateMessages = null;
 
     if (nameErrorState || categoryErrorState || ratingErrorState) {
-        validateMessages = (<p className="validate-errors">Please fill-out all fields</p>);
+        validateMessages = (<p className="validate-errors">Please fill all fields.</p>);
     } else {
         validateMessages = null;
     }

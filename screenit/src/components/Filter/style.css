@@ -115,6 +115,19 @@ Table Of Contents
 2. Breakpoints 
 ———————————————————————————————————————————————— */
 
+@media screen and (min-width: 700px) {
+    .filter {
+        background: var(--grey4)
+    }
+
+    .filter__form {
+        padding: 100px 40px;
+        max-width: 600px;
+        margin: auto;
+    }
+}
+
+
 @media screen and (max-width: 475px) {
     .filter__input-group {
         grid-gap: 10px;
