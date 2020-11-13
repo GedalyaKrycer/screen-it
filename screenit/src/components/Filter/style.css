@@ -11,8 +11,12 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-
 .filter {
+    border-bottom: 1px solid var(--grey3);
+}
+
+
+.filter__form {
     padding: 40px;
 }
 

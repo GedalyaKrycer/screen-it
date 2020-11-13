@@ -59,7 +59,7 @@ const Filter = () => {
 
     return (
         <section className="filter">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="filter__form">
 
                 {/* Name of movie */}
                 <div className="filter__input-group">
