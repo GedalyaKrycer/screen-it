@@ -35,8 +35,20 @@ Table Of Contents
     font-weight: 500;
 }
 
+.result__avatar--lg {
+    font-size: 24px;
+}
+
+.result__avatar--sm {
+    font-size: 16px;
+}
+
 .result__movie-name {
     margin: 0 0 6px;
+    width: 280px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .result__category {
