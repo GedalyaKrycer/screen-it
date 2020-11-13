@@ -24,6 +24,11 @@ const Filter = () => {
     // State for category field Error
     const [categoryError, setCategoryError] = useState(false);
 
+    // State for Results Data
+    const [resultsArray, setResultsArray] = useState([]);
+
+
+
 
 
 
@@ -41,11 +46,15 @@ const Filter = () => {
 
         setMoveNameError(false);
         setCategoryError(false);
+
+        setResultsArray((resultsArray) => [...resultsArray, { movieName, category, rating }])
         console.log(movieName);
         console.log("---------");
         console.log(category);
         console.log("---------");
         console.log(rating);
+
+        console.log(resultsArray);
     }
 
 
@@ -122,6 +131,15 @@ const Filter = () => {
                     value="Add Movie"
                 />
             </form>
+
+            {resultsArray.map((result, index) => {
+                return <div key={result.movieName + index}>
+                    <h2>{result.movieName}</h2>
+                    <p>{result.category}</p>
+                    <h3>{result.rating}</h3>
+
+                </div>
+            })}
 
         </section>
     )
