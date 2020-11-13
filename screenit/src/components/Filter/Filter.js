@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars'
+import RatingStars from '../RatingStars/RatingStars';
+import FilterValidation from '../FilterValidation/FilterValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
 
 
@@ -52,15 +53,6 @@ const Filter = () => {
 
     }
 
-
-    // Validation message that gets added to the dom if errors return as true
-    let validateMessages = null;
-
-    if (movieNameError || categoryError || ratingError) {
-        validateMessages = (<p className="filter__validate-errors">Please fill-out all fields</p>);
-    } else {
-        validateMessages = null;
-    }
 
     return (
         <section className="filter">
@@ -114,7 +106,11 @@ const Filter = () => {
                 </div>
 
                 {/* Validate Messages */}
-                {validateMessages}
+                <FilterValidation
+                    nameErrorState={movieNameError}
+                    categoryErrorState={categoryError}
+                    ratingErrorState={ratingError}
+                />
 
                 {/* Submit Button */}
                 <input

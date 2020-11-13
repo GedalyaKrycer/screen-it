@@ -1,0 +1,12 @@
+.validate-errors {
+    background-color: var(--grey3);
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+
+
+
