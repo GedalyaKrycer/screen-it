@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { useSeenItContext } from '../../utils/SeenItContext';
 
-const RatingStars = ({ disableStar }) => {
+const RatingStarsInput = () => {
 
     // Imports states from context
     const { rating, setRating, starHover, setStarHover } = useSeenItContext();
@@ -24,8 +24,8 @@ const RatingStars = ({ disableStar }) => {
                             className="rating__input-radio"
                             value={ratingValue}
 
-                            // Controls which item is being selected and if it should be clickable at all
-                            onClick={() => setRating(ratingValue)} disabled={disableStar}
+                            // Controls which item is being selected
+                            onClick={() => setRating(ratingValue)}
 
                         />
 
@@ -42,7 +42,7 @@ const RatingStars = ({ disableStar }) => {
                                         `}
 
                             // If the star is not disabled then the hover class will be added on mouse over
-                            onMouseEnter={() => !disableStar ? setStarHover(ratingValue) : null}
+                            onMouseEnter={() => setStarHover(ratingValue)}
 
                             // Removes hover class
                             onMouseLeave={() => setStarHover(null)}
@@ -57,4 +57,4 @@ const RatingStars = ({ disableStar }) => {
     )
 }
 
-export default RatingStars;
+export default RatingStarsInput;

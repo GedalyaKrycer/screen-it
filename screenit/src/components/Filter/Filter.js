@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars';
+import RatingStarsInput from '../RatingStarsInput/RatingStarsInput';
 import FilterValidation from '../FilterValidation/FilterValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
 
@@ -103,7 +103,7 @@ const Filter = () => {
                 {/* Rating */}
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
-                    <RatingStars disableStar={false} />
+                    <RatingStarsInput />
 
                 </div>
 
