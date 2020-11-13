@@ -81,9 +81,11 @@ const Filter = () => {
                 <div className="filter__input-group">
                     <label
                         className="filter__label"
+                        htmlFor="categorySelect"
                     >Category</label>
                     <select
                         value={category}
+                        id="categorySelect"
                         onChange={(e) => setCategory(e.currentTarget.value)}
                         className={`filter__select 
                         ${!category ? "filter__select--active" : null}`}>

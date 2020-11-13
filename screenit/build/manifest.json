@@ -5,6 +5,7 @@
   "scope": "/",
   "start_url": "/",
   "app_name": "Screen It",
+  "name": "Screen It",
   "short_name": "Screen It",
   "description": "Web app that tracks and rates movies",
   "icons": [
