@@ -45,38 +45,7 @@ body {
 }
 
 
-select {
-	background-image: url('./img/caret.svg');
-	background-position: right 20px center;
-	background-repeat: no-repeat;
-  outline: none;
-  padding: 19px 54px 19px 24px;
-  color: var(--grey1);
-}
 
-input {
-  padding: 19px 24px;
-}
-
-::placeholder {
-  color: var(--grey1);
-}
-
-input,
-select {
-  -webkit-appearance: none;
-	-moz-appearance: none;
-	-o-appearance: none;
-	appearance: none;
-  border: solid 1px var(--grey2); 
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 29px;
-  border-radius: 8px;
-  background-color: white;
-  min-width: 0;
-  
-}
 
 
 

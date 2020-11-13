@@ -1,3 +1,17 @@
+/* ————————————————————————————————————————————————
+Table Of Contents
+
+1. Main Code 
+2. Breakpoints 
+
+———————————————————————————————————————————————— */
+
+
+
+/* ————————————————————————————————————————————————
+1. Main Code
+———————————————————————————————————————————————— */
+
 .filter {
     padding: 40px;
 }
@@ -24,6 +38,39 @@
   line-height: 29px;
 }
 
+.filter__select {
+	background-image: url('../../img/caret.svg');
+	background-position: right 20px center;
+	background-repeat: no-repeat;
+  outline: none;
+  padding: 19px 54px 19px 24px;
+  color: var(--grey1);
+}
+
+.filter__input {
+  padding: 19px 24px;
+}
+
+::placeholder {
+  color: var(--grey1);
+}
+
+.filter__input,
+.filter__select {
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+  border: solid 1px var(--grey2); 
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  border-radius: 8px;
+  background-color: white;
+  min-width: 0;
+  
+}
+
 
 .filter__submit-btn {
     width: 100%;
@@ -34,7 +81,6 @@
     font-weight: 600;
     cursor: pointer;
     transition: ease .5s;
-
 }
 
 .filter__submit-btn:hover {
@@ -42,6 +88,44 @@
     background-color: var(--primary);
     opacity: .8;
 }
+
+
+
+
+
+
+
+.rating {
+    display: grid;
+    grid-gap: 11px;
+    grid-template-columns: repeat(5, 25px);
+    align-items: center;
+}
+
+/* .rating__input-radio {
+    display: none;
+} */
+
+.rating__star {
+    cursor: pointer;
+    transition: color .2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ————————————————————————————————————————————————
+2. Breakpoints 
+———————————————————————————————————————————————— */
 
 @media screen and (max-width: 475px) {
     .filter__input-group {

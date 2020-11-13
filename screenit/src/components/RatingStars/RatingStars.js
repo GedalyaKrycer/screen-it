@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
 
-const Stars = () => {
+const RatingStars = () => {
     return (
         <>
-            <p>Stars</p>
+            <p>RatingStars</p>
         </>
     )
 }
 
-export default Stars;
+export default RatingStars;
