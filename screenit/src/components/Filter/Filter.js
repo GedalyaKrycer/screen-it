@@ -33,7 +33,7 @@ const Filter = () => {
         // Validates if data was inputted
         if (!movieName) {
             return setMoveNameError(true);
-        } else if (!category) {
+        } else if (!category || category === "default") {
             return setCategoryError(true);
         } else if (!rating) {
             return setRatingError(true);
@@ -44,9 +44,12 @@ const Filter = () => {
         console.log(movieName);
         console.log("---------");
         console.log(category);
+        console.log("---------");
+        console.log(rating);
     }
 
 
+    // Validation message that gets added to the dom if errors return as true
     let validateMessages = null;
 
     if (movieNameError || categoryError || ratingError) {
