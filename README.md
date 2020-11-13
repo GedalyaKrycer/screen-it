@@ -32,4 +32,14 @@ Recreate the provided movie tracker design using html/css/js but preferably with
 
 * Attention was paid to adding comments to the code to explain functions and creating TOC in longer style sheets.
 
-* In addition to the 640px size, I also took some liberties and added  additional styles for larger / smaller breakpoints. This prevented the layout from breaking, while still staying within the general theme of the design.  
+* In addition to the 640px size, I also took some liberties and added  additional styles for larger / smaller breakpoints. This prevented the layout from breaking, while still staying within the general theme of the design. 
+![Responsive Gif](./readme-assets/responsive.gif)  
+
+
+* Clicking on a movie result will allow you to delete it or visit the IMDB page. This the IMDB link is accomplished by combining the OMDB API data (via Axios get request), with a query string on the IMDB url. 
+![Tools Gif](./readme-assets/tools.gif)  
+
+
+* Some simple validation has been added to the filters to make sure they are included and to the API request. If no movie exists, then a placeholder is given.
+
+

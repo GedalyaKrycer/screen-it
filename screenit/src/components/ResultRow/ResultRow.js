@@ -66,6 +66,8 @@ const ResultRow = () => {
                         // Sets the new array to state
                         setResultsArray(resultsArrayCopy);
 
+                        setSlideClassControl(false);
+
                     }
 
                     return (

@@ -17,6 +17,7 @@ Table Of Contents
     width: 100%;
     min-height: 130px;
     border-bottom: 1px solid var(--grey3);
+    cursor: pointer;
 }
 
 .result-row {
@@ -107,6 +108,7 @@ Table Of Contents
     border-radius: 60px;
     box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.15);
     display: inline-block;
+    cursor: pointer;
    
 }
 
