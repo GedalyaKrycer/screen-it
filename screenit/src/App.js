@@ -12,7 +12,7 @@ function App() {
       <Header />
       <Filter />
       <ResultRow />
-      <EditModal />
+      {/* <EditModal /> */}
     </SeenItProvider>
   );
 }
