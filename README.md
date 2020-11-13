@@ -37,9 +37,11 @@ Recreate the provided movie tracker design using html/css/js but preferably with
 
 
 * Clicking on a movie result will allow you to delete it or visit the IMDB page. This the IMDB link is accomplished by combining the OMDB API data (via Axios get request), with a query string on the IMDB url. 
-![Tools Gif](./readme-assets/tools.gif)  
+![Tools Gif](./readme-assets/tools.png)  
 
 
 * Some simple validation has been added to the filters to make sure they are included and to the API request. If no movie exists, then a placeholder is given.
+
+* Avatars show up the first character of up to the first 3 word's. If there are more then two characters the font size gets smaller dynamically. 
 
 
