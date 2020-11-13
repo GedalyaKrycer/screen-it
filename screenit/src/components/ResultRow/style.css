@@ -105,12 +105,16 @@ Table Of Contents
 ———————————————————————————————————————————————— */
 
 @media screen and (min-width: 700px) {
-    .result-row {
+
+
+    .result-row, 
+    .result-row__parent,
+    .result-row__tools {
         max-width: 700px;
         margin: auto;
-        border-right: 1px solid var(--grey3);
-        border-left: 1px solid var(--grey3);
+
     }
+
     
 
 }
