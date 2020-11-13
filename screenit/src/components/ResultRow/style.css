@@ -12,13 +12,31 @@ Table Of Contents
 1. Main Code
 ———————————————————————————————————————————————— */
 
+.result-row__parent {
+    position: relative;
+    width: 100%;
+    min-height: 130px;
+    border-bottom: 1px solid var(--grey3);
+}
+
 .result-row {
     padding: 33px 40px;
+    background: white;
     display: grid;
     grid-gap: 24px;
     grid-template-columns: 64px 1fr 169px;
     align-items: center;
+    transition: all ease-in .3s;
+    z-index: 2;
     border-bottom: 1px solid var(--grey3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.result-row--slide {
+    transform: translateX(-150px);
 }
 
 
@@ -56,6 +74,30 @@ Table Of Contents
     margin: 0;
 }
 
+.result-row__tools {
+    background: var(--grey4);
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.result-row__tools-icon {
+    margin-right: 40px;
+    width: 25px;
+    height: 28px;
+    fill: var(--primary);
+    background: white;
+    padding: 20px;
+    border-radius: 60px;
+    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.15);
+}
 
 
 /* ————————————————————————————————————————————————
@@ -78,6 +120,10 @@ Table Of Contents
         max-width: 210px;
     }
 
+    .result-row__parent {
+        min-height: 158px;
+    }
+
     .result-row {
         padding: 30px 20px;
         grid-gap: 15px;
@@ -97,10 +143,3 @@ Table Of Contents
     }
 }
 
-
-
-@media screen and (max-width: 375px) {
-    
-
-    
-}
