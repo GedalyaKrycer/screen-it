@@ -19,7 +19,7 @@ const ResultRow = () => {
                 resultsArray.map((result, index) => {
 
                     // Take the movie's name and creates a new array, splitting on the spaces, but stops after 3 items.
-                    const avatarArray = result.movieName.split(" ").slice(0, 3)
+                    const avatarArray = result.movieName.split(/[^A-Z0-9]/ig).slice(0, 3)
 
                     // Stores the final 1-3 characters from the array
                     const avatarCharacters = [];
