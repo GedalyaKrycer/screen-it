@@ -8,7 +8,10 @@ const ResultRow = () => {
     const { resultsArray, setResultsArray } = useSeenItContext();
 
     // State that controls if the row should slide over or not
-    const [slideClass, setSlideClass] = useState(false);
+    const [slideClassControl, setSlideClassControl] = useState(false);
+
+    // State that stores the index of the element clicked
+    const [slideClassIndex, setSlideClassIndex] = useState(false);
 
 
 
@@ -44,8 +47,10 @@ const ResultRow = () => {
                     const slideItemHandle = (index) => {
                         console.log(`Item ${index} clicked`);
 
+                        setSlideClassIndex(index)
+
                         // Sets the state that controls the slide class to true/false
-                        slideClass ? setSlideClass(false) : setSlideClass(true);
+                        slideClassControl ? setSlideClassControl(false) : setSlideClassControl(true);
                     }
 
                     // Deletes movie entry
@@ -66,11 +71,11 @@ const ResultRow = () => {
                         <div className="result-row__parent"
                             key={result.movieName + index}>
                             <div
-                                className={`result-row ${slideClass ? 'result-row--slide' : null}`}
-                                onClick={() => slideItemHandle(index)}>
+                                className={`result-row ${slideClassIndex === index && slideClassControl ? 'result-row--slide' : null}`}
+                                onClick={() => slideItemHandle(index)} >
 
                                 {/* Avatar */}
-                                <span className={`result-row__avatar ${avatarLength === 'sm' ? 'result-row__avatar--sm' : 'result-row__avatar--lg'}`}>{avatarCharacters}</span>
+                                < span className={`result-row__avatar ${avatarLength === 'sm' ? 'result-row__avatar--sm' : 'result-row__avatar--lg'}`}>{avatarCharacters}</span>
 
                                 {/* Name and Category */}
                                 <div className="result-row__txt">
