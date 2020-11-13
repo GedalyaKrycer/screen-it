@@ -45,7 +45,7 @@ const Filter = () => {
         setCategoryError(false);
 
         // OMDB Image API
-        const omdbUrl = `http://www.omdbapi.com/?t=${movieName}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+        const omdbUrl = `https://www.omdbapi.com/?t=${movieName}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
 
 
         // API Call
