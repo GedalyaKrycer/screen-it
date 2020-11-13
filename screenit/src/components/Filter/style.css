@@ -45,7 +45,10 @@ Table Of Contents
 	background-repeat: no-repeat;
   outline: none;
   padding: 19px 54px 19px 24px;
-  color: var(--grey1);
+}
+
+.filter__select--active {
+	color: var(--grey1);
 }
 
 .filter__input,
@@ -89,6 +92,15 @@ Table Of Contents
     box-shadow: none;
     background-color: var(--primary);
     opacity: .8;
+}
+
+.filter__validate-errors {
+    background-color: var(--grey3);
+    color: red;
+    text-align: center;
+    font-size: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
 }
 
 

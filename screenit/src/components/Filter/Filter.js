@@ -1,16 +1,63 @@
 import React, { useState } from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars'
-
+import { useSeenItContext } from '../../utils/SeenItContext';
 
 
 const Filter = () => {
 
+    // Imports states from context
+    const { rating } = useSeenItContext();
 
+    // State for category field Error
+    const [ratingError, setRatingError] = useState(false);
+
+    // State for name field 
+    const [movieName, setMoveName] = useState();
+
+    // State for name field Error
+    const [movieNameError, setMoveNameError] = useState(false);
+
+    // State for category field 
+    const [category, setCategory] = useState();
+
+    // State for category field Error
+    const [categoryError, setCategoryError] = useState(false);
+
+
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        // Validates if data was inputted
+        if (!movieName) {
+            return setMoveNameError(true);
+        } else if (!category) {
+            return setCategoryError(true);
+        } else if (!rating) {
+            return setRatingError(true);
+        }
+
+        setMoveNameError(false);
+        setCategoryError(false);
+        console.log(movieName);
+        console.log("---------");
+        console.log(category);
+    }
+
+
+    let validateMessages = null;
+
+    if (movieNameError || categoryError || ratingError) {
+        validateMessages = (<p className="filter__validate-errors">Please fill-out all fields</p>);
+    } else {
+        validateMessages = null;
+    }
 
     return (
         <section className="filter">
-            <form onSubmit={"handleSubmit"}>
+            <form onSubmit={handleSubmit}>
 
                 {/* Name of movie */}
                 <div className="filter__input-group">
@@ -23,6 +70,7 @@ const Filter = () => {
                         type="text"
                         placeholder="Name of the movie"
                         className="filter__input"
+                        onChange={(e) => setMoveName(e.target.value)}
                     />
                 </div>
 
@@ -32,18 +80,18 @@ const Filter = () => {
                         className="filter__label"
                     >Category</label>
                     <select
-                        value={"this.state.value"}
-                        onChange={"handleChange"}
-                        className="filter__select">
-                        <option value={null}>Select a category</option>
-                        <option value="action">Action</option>
-                        <option value="comedy">Comedy</option>
-                        <option value="drama">Drama</option>
-                        <option value="romance">Romance</option>
-                        <option value="horror">Horror</option>
-                        <option value="thriller">Thriller</option>
-                        <option value="documentary">Documentary</option>
-                        <option value="other">Other</option>
+                        value={category}
+                        onChange={(e) => setCategory(e.currentTarget.value)}
+                        className={`filter__select ${!category ? "filter__select--active" : null}`}>
+                        <option value="default">Select a category</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Romance">Romance</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Thriller">Thriller</option>
+                        <option value="Documentary">Documentary</option>
+                        <option value="Other">Other</option>
                     </select>
 
                 </div>
@@ -52,10 +100,17 @@ const Filter = () => {
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
                     <RatingStars
-                        disableStar={true}
+                        disableStar={false}
                     />
 
                 </div>
+
+                {/* Validate Messages */}
+                {validateMessages}
+
+
+
+
 
                 {/* Submit Button */}
                 <input

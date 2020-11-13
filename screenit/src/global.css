@@ -45,7 +45,10 @@ body {
 }
 
 
-
+input:focus,
+select:focus {
+  outline-color: var(--primary);
+}
 
 
 

@@ -3,6 +3,7 @@
     grid-gap: 11px;
     grid-template-columns: repeat(5, 25px);
     align-items: center;
+    justify-self: end;
 }
 
 .rating__input-radio {
