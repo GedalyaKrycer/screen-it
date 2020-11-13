@@ -7,7 +7,7 @@ import { useSeenItContext } from '../../utils/SeenItContext';
 const Filter = () => {
 
     // Imports states from context
-    const { rating } = useSeenItContext();
+    const { rating, resultsArray, setResultsArray } = useSeenItContext();
 
     // State for category field Error
     const [ratingError, setRatingError] = useState(false);
@@ -24,14 +24,8 @@ const Filter = () => {
     // State for category field Error
     const [categoryError, setCategoryError] = useState(false);
 
-    // State for Results Data
-    const [resultsArray, setResultsArray] = useState([]);
 
-
-
-
-
-
+    // Form Submit 
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -47,14 +41,11 @@ const Filter = () => {
         setMoveNameError(false);
         setCategoryError(false);
 
-        setResultsArray((resultsArray) => [...resultsArray, { movieName, category, rating }])
-        console.log(movieName);
-        console.log("---------");
-        console.log(category);
-        console.log("---------");
-        console.log(rating);
-
-        console.log(resultsArray);
+        setResultsArray((resultsArray) => [...resultsArray, {
+            movieName,
+            category,
+            rating
+        }])
     }
 
 
@@ -119,10 +110,6 @@ const Filter = () => {
 
                 {/* Validate Messages */}
                 {validateMessages}
-
-
-
-
 
                 {/* Submit Button */}
                 <input

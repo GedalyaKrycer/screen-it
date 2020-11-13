@@ -15,6 +15,9 @@ export function SeenItProvider({ children }) {
     // Stores state for the star rating hovering
     const [starHover, setStarHover] = useState(null);
 
+    // State for Results Data
+    const [resultsArray, setResultsArray] = useState([]);
+
 
 
     return (
@@ -23,7 +26,9 @@ export function SeenItProvider({ children }) {
                 rating,
                 setRating,
                 starHover,
-                setStarHover
+                setStarHover,
+                resultsArray,
+                setResultsArray
             }}
         >
             {children}

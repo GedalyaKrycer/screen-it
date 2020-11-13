@@ -43,8 +43,8 @@ Table Of Contents
 	background-image: url('../../img/caret.svg');
 	background-position: right 20px center;
 	background-repeat: no-repeat;
-  outline: none;
-  padding: 19px 54px 19px 24px;
+    outline: none;
+    padding: 19px 54px 19px 24px;
 }
 
 .filter__select--active {
@@ -115,5 +115,22 @@ Table Of Contents
     .filter__input-group {
         grid-gap: 10px;
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .filter__input-group--rating {
+        grid-gap: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    .filter__input-group--rating {
+        margin: 0 0 40px;
+    }
+
+    .filter__input,
+    .filter__select,
+    .filter__submit-btn {
+        font-size: 20px;
     }
 }
