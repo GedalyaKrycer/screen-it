@@ -7,19 +7,19 @@ import { useSeenItContext } from '../../utils/SeenItContext';
 const Filter = () => {
 
     // Imports states from context
-    const { rating, resultsArray, setResultsArray } = useSeenItContext();
+    const { rating, setRating, setResultsArray } = useSeenItContext();
 
     // State for category field Error
     const [ratingError, setRatingError] = useState(false);
 
     // State for name field 
-    const [movieName, setMoveName] = useState();
+    const [movieName, setMoveName] = useState('');
 
     // State for name field Error
     const [movieNameError, setMoveNameError] = useState(false);
 
     // State for category field 
-    const [category, setCategory] = useState();
+    const [category, setCategory] = useState('');
 
     // State for category field Error
     const [categoryError, setCategoryError] = useState(false);
@@ -46,6 +46,10 @@ const Filter = () => {
             category,
             rating
         }])
+        setMoveName('');
+        setCategory('');
+        setRating('');
+
     }
 
 
@@ -73,6 +77,7 @@ const Filter = () => {
                         type="text"
                         placeholder="Name of the movie"
                         className="filter__input"
+                        value={movieName}
                         onChange={(e) => setMoveName(e.target.value)}
                     />
                 </div>
@@ -118,15 +123,6 @@ const Filter = () => {
                     value="Add Movie"
                 />
             </form>
-
-            {resultsArray.map((result, index) => {
-                return <div key={result.movieName + index}>
-                    <h2>{result.movieName}</h2>
-                    <p>{result.category}</p>
-                    <h3>{result.rating}</h3>
-
-                </div>
-            })}
 
         </section>
     )
