@@ -44,4 +44,6 @@ Recreate the provided movie tracker design using html/css/js but preferably with
 
 * Avatars show up the first character of up to the first 3 word's. If there are more then two characters the font size gets smaller dynamically. 
 
+* The Movie name hides overflow and shows an ellipse after a preset width size that changes based on breakpoint.
+
 
