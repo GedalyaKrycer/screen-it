@@ -3,6 +3,7 @@ import './style.css';
 import RatingStarsInput from '../RatingStarsInput/RatingStarsInput';
 import FilterValidation from '../FilterValidation/FilterValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
+import axios from 'axios';
 
 
 const Filter = () => {
@@ -43,12 +44,28 @@ const Filter = () => {
         setMoveNameError(false);
         setCategoryError(false);
 
-        // Adds all new input values to an array state
-        setResultsArray((resultsArray) => [...resultsArray, {
-            movieName,
-            category,
-            rating
-        }])
+        // OMDB Image API
+        const omdbUrl = `http://www.omdbapi.com/?t=${movieName}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
+
+
+        // API Call
+        axios.get(omdbUrl)
+            .then((res) => {
+
+                // Stores IMDB ID
+                const movieID = JSON.stringify(res.data.imdbID);
+
+                // Adds all new input values to an array state
+                setResultsArray((resultsArray) => [...resultsArray, {
+                    movieName,
+                    category,
+                    rating,
+                    movieID
+                }])
+            })
+            .catch((err) => {
+                console.log(`OMDB Error: ${err}`);
+            })
 
         // Resets all input values
         setMoveName('');
