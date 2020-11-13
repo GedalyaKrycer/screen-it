@@ -53,7 +53,12 @@ const Filter = () => {
             .then((res) => {
 
                 // Stores IMDB ID
-                const movieID = JSON.stringify(res.data.imdbID);
+                let movieID = JSON.stringify(res.data.imdbID);
+
+                // Sets a fall back if the input is not valid
+                if (movieID === undefined) {
+                    movieID = "tt1333032";
+                }
 
                 // Adds all new input values to an array state
                 setResultsArray((resultsArray) => [...resultsArray, {
