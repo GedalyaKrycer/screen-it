@@ -111,7 +111,7 @@ const ResultRow = () => {
                                         target="_blank"
                                         rel="noreferrer noopener"
 
-                                        // Removes whitespace and quotes from the IMDB ID's string
+                                        // Removes whitespace and quotes from the IMDB string
                                         href={`https://www.imdb.com/title/${result.movieID.trim("").replace(/['"]+/g, '')}`}>
                                         <svg
                                             viewBox="0 0 28 28"
