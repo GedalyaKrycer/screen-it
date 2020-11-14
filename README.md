@@ -2,7 +2,7 @@
 
 
 
-### Deployed Link: 
+### Deployed Link 
 https://screenit.netlify.app/
 
 ### Figma Link
@@ -27,7 +27,7 @@ Recreate the provided movie tracker design using html/css/js but preferably with
 
 * This app has been built with React and uses ES6+ JS, Hooks, Props and a Context Provider. I stayed away from using bootstrap and opted to leverage CSS Grid, FlexBox, css variables and other custom styles.
 
-* This site is also a PWA (Progress Web Application), which allows it to be downloaded to a computer or tablet as an offline "app". It scores 100% across in the board in Google Chrome's Lighthouse report. 
+* This site is also a PWA (Progress Web Application), which allows it to be downloaded to a computer or tablet as an offline "app". It scores 100% across the board in Google Chrome's Lighthouse report. 
 ![lighthouse report](./readme-assets/lighthouse-report.png)  
 
 * Attention was paid to adding comments to the code to explain functions and creating TOC in longer style sheets.
@@ -44,6 +44,6 @@ Recreate the provided movie tracker design using html/css/js but preferably with
 
 * Avatars show up the first character of up to the first 3 word's. If there are more then two characters the font size gets smaller dynamically. 
 
-* The Movie name hides overflow and shows an ellipse after a preset width size that changes based on breakpoint.
+* The Movie name hides overflow text and shows an ellipse after a preset width, which changes based on breakpoint.
 
 
