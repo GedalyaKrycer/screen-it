@@ -127,7 +127,9 @@ const Filter = () => {
                 {/* Rating */}
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
-                    <RatingStarsInput />
+                    <RatingStarsInput
+                        disableClick={false}
+                    />
 
                 </div>
 
