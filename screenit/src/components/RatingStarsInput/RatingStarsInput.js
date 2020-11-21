@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './style.css';
 import { useSeenItContext } from '../../utils/SeenItContext';
+import { TweenMax, Power3 } from 'gsap';
 
 const RatingStarsInput = () => {
 
     // Imports states from context
     const { rating, setRating, starHover, setStarHover } = useSeenItContext();
 
+    let starRef = useRef();
+
+
+
     return (
-        <div className="ratings">
+
+        // Ref grabs the parent div that holds all stars
+        <div className="ratings" ref={el => starRef = el}>
 
             {/* Creates an array of 5 to duplicate the stars */}
             {[...Array(5)].map((star, index) => {
@@ -16,8 +23,34 @@ const RatingStarsInput = () => {
                 // Makes the values start at "1" instead of "0"
                 const ratingValue = index + 1;
 
+                // Function for when stars are clicked
+                const starClick = () => {
+
+                    // Sets the global raiting state the current star's value
+                    setRating(ratingValue);
+
+                    // If the 5th star is selected, the animation runs on all 5 stars.
+                    if (ratingValue === 5) {
+                        TweenMax.to(starRef.children, .2,
+                            {
+                                y: -5,
+                                autoAlpha: 0.8,
+                                scale: 1.3,
+                                rotation: 360,
+
+                                stagger: {
+                                    amount: 0.2,
+                                    yoyo: true,
+                                    repeat: 1
+                                },
+                                ease: Power3.easeOut
+
+                            });
+                    }
+                }
+
                 return (
-                    <label key={index}>
+                    <label key={index} >
                         <input
                             type="radio"
                             name="rating"
@@ -25,7 +58,8 @@ const RatingStarsInput = () => {
                             value={ratingValue}
 
                             // Controls which item is being selected
-                            onClick={() => setRating(ratingValue)}
+                            // onClick={() => setRating(ratingValue)}
+                            onClick={starClick}
 
                         />
 
