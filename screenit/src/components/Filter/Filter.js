@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-import RatingStarsInput from '../RatingStarsInput/RatingStarsInput';
+import RatingStars from '../RatingStars/RatingStars';
 import FilterValidation from '../FilterValidation/FilterValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
 import axios from 'axios';
@@ -127,7 +127,7 @@ const Filter = () => {
                 {/* Rating */}
                 <div className="filter__input-group--rating">
                     <p className="filter__label">Rating</p>
-                    <RatingStarsInput
+                    <RatingStars
                         disableClick={false}
                     />
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.css';
-// import RatingStarsDisplay from '../RatingStarsDisplay/RatingStarsDisplay';
-import RatingStarsInput from '../RatingStarsInput/RatingStarsInput';
+import RatingStars from '../RatingStars/RatingStars';
 import { useSeenItContext } from '../../utils/SeenItContext';
 
 
@@ -92,7 +91,7 @@ const ResultRow = () => {
                                 {/* Star Rating */}
                                 <div className="result-row__rating" >
 
-                                    <RatingStarsInput
+                                    <RatingStars
                                         disableClick={true}
                                         stateValues={result.rating}
                                     />

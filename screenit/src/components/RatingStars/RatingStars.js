@@ -3,7 +3,7 @@ import './style.css';
 import { useSeenItContext } from '../../utils/SeenItContext';
 import { TweenMax, Power3 } from 'gsap';
 
-const RatingStarsInput = ({ disableClick, stateValues }) => {
+const RatingStars = ({ disableClick, stateValues }) => {
 
     // Imports states from context
     const { rating, setRating, starHover, setStarHover } = useSeenItContext();
@@ -121,4 +121,4 @@ const RatingStarsInput = ({ disableClick, stateValues }) => {
     )
 }
 
-export default RatingStarsInput;
+export default RatingStars;
