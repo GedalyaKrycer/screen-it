@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Filter from './components/Filter/Filter';
 import ResultRow from './components/ResultRow/ResultRow';
+import Modal from './components/Modal/Modal';
 import { SeenItProvider } from './utils/SeenItContext';
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
       <Header />
       <Filter />
       <ResultRow />
-      <Filter />
+      <Modal>
+        <Filter />
+      </Modal>
     </SeenItProvider>
   );
 }

@@ -21,8 +21,6 @@ export function SeenItProvider({ children }) {
     // Stores state for the id of a result object that is being edited
     const [resultEditId, setResultEditId] = useState(null);
 
-    // State that controls if the result row should slide over or not
-    const [slideClassControl, setSlideClassControl] = useState(false);
 
     // State that controls if modal should open/close
     const [modalState, setModalState] = useState(false);
@@ -39,8 +37,6 @@ export function SeenItProvider({ children }) {
                 setResultsArray,
                 resultEditId,
                 setResultEditId,
-                slideClassControl,
-                setSlideClassControl,
                 modalState,
                 setModalState
             }}

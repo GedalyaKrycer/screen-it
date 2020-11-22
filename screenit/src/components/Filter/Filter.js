@@ -16,8 +16,6 @@ const Filter = () => {
         resultsArray,
         resultEditId,
         setResultEditId,
-        slideClassControl,
-        setSlideClassControl,
         setModalState
     } = useSeenItContext();
 
@@ -97,8 +95,7 @@ const Filter = () => {
                     // Updates the array with the new info
                     setResultsArray(resultArrayCopy);
 
-                    // Closes the result row
-                    setSlideClassControl(!slideClassControl)
+
 
                     // Closes modal 
                     setModalState(false);

@@ -10,11 +10,12 @@ const ResultRow = () => {
         resultsArray,
         setResultsArray,
         setResultEditId,
-        slideClassControl,
-        setSlideClassControl,
         setModalState
     } = useSeenItContext();
 
+
+    // State that controls if the result row should slide over or not
+    const [slideClassControl, setSlideClassControl] = useState(false);
 
     // State that stores the index of the element clicked
     const [slideClassIndex, setSlideClassIndex] = useState(null);
@@ -90,8 +91,15 @@ const ResultRow = () => {
 
                     // Edit movie entry
                     const editHandler = () => {
+
+                        // Passes this results id to form
                         setResultEditId(result.id);
+
+                        // Opens Modal
                         setModalState(true);
+
+                        // Closes the result row
+                        setSlideClassControl(!slideClassControl)
 
                     }
 
