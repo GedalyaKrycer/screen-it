@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
-import FilterValidation from '../FilterValidation/FilterValidation';
+import FormValidation from '../FormValidation/FormValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
 import axios from 'axios';
 
 
-const Filter = () => {
+const Form = () => {
 
     // Imports states from context
     const {
@@ -131,40 +131,39 @@ const Filter = () => {
 
 
     return (
-        <section className="filter">
-
+        <>
             {/* Form submits with an event and also an optional id of an item being edited */}
-            <form onSubmit={(e) => handleSubmit(e, resultEditId)} className="filter__form">
+            <form onSubmit={(e) => handleSubmit(e, resultEditId)}>
 
                 {/* Name of movie */}
-                <div className="filter__input-group">
+                <div className="form__input-group">
                     <label
                         htmlFor="nameInput"
-                        className="filter__label">Name</label>
+                        className="form__label">Name</label>
 
                     <input
                         id="nameInput"
                         type="text"
-                        placeholder="Name of the movie"
-                        className="filter__input"
+                        placeholder="Movie name"
+                        className="form__input"
                         value={movieName}
                         onChange={(e) => setMoveName(e.target.value)}
                     />
                 </div>
 
                 {/* Category */}
-                <div className="filter__input-group">
+                <div className="form__input-group">
                     <label
-                        className="filter__label"
+                        className="form__label"
                         htmlFor="categorySelect"
                     >Category</label>
                     <select
                         value={category}
                         id="categorySelect"
                         onChange={(e) => setCategory(e.currentTarget.value)}
-                        className={`filter__select 
-                        ${!category ? "filter__select--active" : null}`}>
-                        <option value="default">Select a category</option>
+                        className={`form__select 
+                        ${!category ? "form__select--active" : null}`}>
+                        <option value="default">Select category</option>
                         <option value="Action">Action</option>
                         <option value="Comedy">Comedy</option>
                         <option value="Drama">Drama</option>
@@ -178,8 +177,8 @@ const Filter = () => {
                 </div>
 
                 {/* Rating */}
-                <div className="filter__input-group--rating">
-                    <p className="filter__label">Rating</p>
+                <div className="form__input-group--rating">
+                    <p className="form__label">Rating</p>
                     <RatingStars
                         disableClick={false}
                     />
@@ -187,7 +186,7 @@ const Filter = () => {
                 </div>
 
                 {/* Validate Messages */}
-                <FilterValidation
+                <FormValidation
                     nameErrorState={movieNameError}
                     categoryErrorState={categoryError}
                     ratingErrorState={ratingError}
@@ -195,14 +194,13 @@ const Filter = () => {
 
                 {/* Submit Button */}
                 <input
-                    className="filter__submit-btn"
+                    className="form__submit-btn"
                     type="submit"
                     value={resultEditId ? "Update Movie" : "Add Movie"}
                 />
             </form>
-
-        </section>
+        </>
     )
 }
 
-export default Filter;
+export default Form;

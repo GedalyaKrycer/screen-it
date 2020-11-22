@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const FilterValidation = ({ nameErrorState, categoryErrorState, ratingErrorState }) => {
+const FormValidation = ({ nameErrorState, categoryErrorState, ratingErrorState }) => {
 
 
     // Validation message that gets added to the dom if errors return as true
@@ -22,4 +22,4 @@ const FilterValidation = ({ nameErrorState, categoryErrorState, ratingErrorState
 
 }
 
-export default FilterValidation;
+export default FormValidation;
