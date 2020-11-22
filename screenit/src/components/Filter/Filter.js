@@ -17,7 +17,8 @@ const Filter = () => {
         resultEditId,
         setResultEditId,
         slideClassControl,
-        setSlideClassControl
+        setSlideClassControl,
+        setModalState
     } = useSeenItContext();
 
     // State for category field Error
@@ -39,8 +40,6 @@ const Filter = () => {
     // Form Submit 
     const handleSubmit = (event, editId) => {
         event.preventDefault();
-
-        console.log(editId);
 
         // Validates if data was inputted
         if (!movieName) {
@@ -74,10 +73,9 @@ const Filter = () => {
                 }
 
 
-                // If an editId is passed in then that result object get's replaced 
+                // If an editId is passed in then that result object gets replaced 
                 // Else a new object is added
                 if (editId) {
-                    console.log("This is not a new element", editId)
 
                     // Finds the index of the item in the results array that has the same ID as the submitted one
                     const resultIndex = resultsArray.findIndex(r => {
@@ -97,30 +95,27 @@ const Filter = () => {
                     }
 
                     // Updates the array with the new info
-                    // setResultsArray((prevState) => [...prevState, resultArrayCopy])
                     setResultsArray(resultArrayCopy);
-
-                    console.log("Filter.js this should be updated array:", resultsArray)
 
                     // Closes the result row
                     setSlideClassControl(!slideClassControl)
 
+                    // Closes modal 
+                    setModalState(false);
 
                     // Resets the edit id to nothing
                     setResultEditId(null);
 
-
-
                 } else {
 
                     // Adds all new input values to an array state
-                    setResultsArray((resultsArray) => [...resultsArray, {
+                    setResultsArray((prevState) => [{
                         movieName,
                         category,
                         rating,
                         imdbMovieID,
                         id: Math.random() * imdbMovieID.length
-                    }])
+                    }, ...prevState])
                 }
 
 

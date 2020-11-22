@@ -24,6 +24,9 @@ export function SeenItProvider({ children }) {
     // State that controls if the row should slide over or not
     const [slideClassControl, setSlideClassControl] = useState(false);
 
+    // State that controls if modal should open/close
+    const [modalState, setModalState] = useState(false);
+
 
     return (
         <SeenItContext.Provider
@@ -37,7 +40,9 @@ export function SeenItProvider({ children }) {
                 resultEditId,
                 setResultEditId,
                 slideClassControl,
-                setSlideClassControl
+                setSlideClassControl,
+                modalState,
+                setModalState
             }}
         >
             {children}

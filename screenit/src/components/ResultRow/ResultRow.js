@@ -11,7 +11,8 @@ const ResultRow = () => {
         setResultsArray,
         setResultEditId,
         slideClassControl,
-        setSlideClassControl
+        setSlideClassControl,
+        setModalState
     } = useSeenItContext();
 
 
@@ -88,15 +89,9 @@ const ResultRow = () => {
                     }
 
                     // Edit movie entry
-                    const editHandler = (index) => {
-
-                        console.log(index);
-                        console.log(`This is ${result.movieName}'s id of ${result.id}`);
-
+                    const editHandler = () => {
                         setResultEditId(result.id);
-                        // setModalState(true)
-                        // Creates an mutable copy
-                        const resultsArrayCopy = [...resultsArray];
+                        setModalState(true);
 
                     }
 
@@ -149,7 +144,7 @@ const ResultRow = () => {
 
                                     {/* Edit Button */}
                                     <svg
-                                        onClick={() => editHandler(index)}
+                                        onClick={editHandler}
                                         className="result-row__tools-icon"
                                         viewBox="0 0 60 60"
                                         xmlns="http://www.w3.org/2000/svg">
