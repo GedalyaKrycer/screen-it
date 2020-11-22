@@ -9,7 +9,16 @@ import axios from 'axios';
 const Filter = () => {
 
     // Imports states from context
-    const { rating, setRating, setResultsArray } = useSeenItContext();
+    const {
+        rating,
+        setRating,
+        setResultsArray,
+        resultsArray,
+        resultEditId,
+        setResultEditId,
+        slideClassControl,
+        setSlideClassControl
+    } = useSeenItContext();
 
     // State for category field Error
     const [ratingError, setRatingError] = useState(false);
@@ -28,8 +37,10 @@ const Filter = () => {
 
 
     // Form Submit 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event, editId) => {
         event.preventDefault();
+
+        console.log(editId);
 
         // Validates if data was inputted
         if (!movieName) {
@@ -53,20 +64,68 @@ const Filter = () => {
             .then((res) => {
 
                 // Stores IMDB ID
-                let movieID = JSON.stringify(res.data.imdbID);
+                let imdbMovieID = JSON.stringify(res.data.imdbID);
 
                 // Sets a fall back if the input is not valid
-                if (movieID === undefined) {
-                    movieID = "tt1333032";
+                if (imdbMovieID === undefined) {
+
+                    // This is the title id to "No Movie"
+                    imdbMovieID = "tt1333032";
                 }
 
-                // Adds all new input values to an array state
-                setResultsArray((resultsArray) => [...resultsArray, {
-                    movieName,
-                    category,
-                    rating,
-                    movieID
-                }])
+
+                // If an editId is passed in then that result object get's replaced 
+                // Else a new object is added
+                if (editId) {
+                    console.log("This is not a new element", editId)
+
+                    // Finds the index of the item in the results array that has the same ID as the submitted one
+                    const resultIndex = resultsArray.findIndex(r => {
+                        return r.id === editId;
+                    })
+
+                    // Copy of results array so it can be altered
+                    const resultArrayCopy = [...resultsArray];
+
+                    // Updates the index matching result object in the array 
+                    resultArrayCopy[resultIndex] = {
+                        movieName,
+                        category,
+                        rating,
+                        imdbMovieID,
+                        id: Math.random() * imdbMovieID.length
+                    }
+
+                    // Updates the array with the new info
+                    // setResultsArray((prevState) => [...prevState, resultArrayCopy])
+                    setResultsArray(resultArrayCopy);
+
+                    console.log("Filter.js this should be updated array:", resultsArray)
+
+                    // Closes the result row
+                    setSlideClassControl(!slideClassControl)
+
+
+                    // Resets the edit id to nothing
+                    setResultEditId(null);
+
+
+
+                } else {
+
+                    // Adds all new input values to an array state
+                    setResultsArray((resultsArray) => [...resultsArray, {
+                        movieName,
+                        category,
+                        rating,
+                        imdbMovieID,
+                        id: Math.random() * imdbMovieID.length
+                    }])
+                }
+
+
+
+
             })
             .catch((err) => {
                 console.log(`OMDB Error: ${err}`);
@@ -81,7 +140,9 @@ const Filter = () => {
 
     return (
         <section className="filter">
-            <form onSubmit={handleSubmit} className="filter__form">
+
+            {/* Form submits with an event and also an optional id of an item being edited */}
+            <form onSubmit={(e) => handleSubmit(e, resultEditId)} className="filter__form">
 
                 {/* Name of movie */}
                 <div className="filter__input-group">
@@ -144,7 +205,7 @@ const Filter = () => {
                 <input
                     className="filter__submit-btn"
                     type="submit"
-                    value="Add Movie"
+                    value={resultEditId ? "Update Movie" : "Add Movie"}
                 />
             </form>
 
