@@ -8,7 +8,7 @@ const Modal = ({ children }) => {
     const {
         modalState,
         setModalState,
-        modalRef
+        setResultEditId
     } = useSeenItContext();
 
     const handleClose = (e) => {
@@ -18,6 +18,9 @@ const Modal = ({ children }) => {
 
         // Closes modal
         setModalState(false);
+
+        // Clears Edit ID
+        setResultEditId(null);
     }
 
     return (

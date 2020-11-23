@@ -65,9 +65,10 @@ const Form = () => {
             return setRatingError(true);
         }
 
-        // Reset errors to turn off
+        // Reset error messages to turn off
         setMoveNameError(false);
         setCategoryError(false);
+        setRatingError(false);
 
         // OMDB Image API
         const omdbUrl = `https://www.omdbapi.com/?t=${movieName}&apikey=${process.env.REACT_APP_OMDB_KEY}`;
@@ -187,6 +188,9 @@ const Form = () => {
                         <option value="Horror">Horror</option>
                         <option value="Thriller">Thriller</option>
                         <option value="Documentary">Documentary</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Sci-Fi">Sci-Fi</option>
+                        <option value="Cartoons/Animations">Cartoons/Animations</option>
                         <option value="Other">Other</option>
                     </select>
 
