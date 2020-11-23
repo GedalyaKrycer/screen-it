@@ -27,13 +27,17 @@ Table Of Contents
     grid-gap: 24px;
     grid-template-columns: 64px 1fr 169px;
     align-items: center;
-    transition: all ease-in .3s;
     z-index: 2;
     border-bottom: 1px solid var(--grey3);
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
+    transition: all ease-in .3s;
+}
+
+.result-row:hover {
+    background: var(--primary-light);
 }
 
 .result-row--slide {
@@ -74,6 +78,12 @@ Table Of Contents
 .result-row__category {
     color: var(--grey1);
     margin: 0;
+}
+
+.result-row__plus {
+    display: none;
+    color: var(--primary);
+    font-size: 22px;
 }
 
 .result-row__tool-wrapper {
@@ -128,7 +138,7 @@ Table Of Contents
 
 @media screen and (max-width: 600px) {
     .result-row__movie-name {
-        max-width: 210px;
+        max-width: 190px;
     }
 
     .result-row__parent {
@@ -138,9 +148,20 @@ Table Of Contents
     .result-row {
         padding: 30px 20px;
         grid-gap: 15px;
-        grid-template-columns: 45px 1fr;
+        grid-template-columns: 45px 1fr 22px;
         align-items: center;
         border-bottom: 1px solid var(--grey3);
+    }
+
+    .result-row__plus {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        /* margin: auto; */
+        top: 50;
+        /* bottom: 50; */
+        right: 20px; 
+        
     }
 
     .result-row__avatar {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
 import { useSeenItContext } from '../../utils/SeenItContext';
+import { FaPlus } from "react-icons/fa";
 
 
 const ResultRow = () => {
@@ -140,6 +141,10 @@ const ResultRow = () => {
                                         disableClick={true}
                                         stateValues={result.rating}
                                     />
+                                </div>
+
+                                <div className="result-row__plus" >
+                                    <FaPlus />
                                 </div>
 
                             </div>
