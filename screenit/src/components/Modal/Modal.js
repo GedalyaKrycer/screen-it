@@ -7,7 +7,8 @@ const Modal = ({ children }) => {
     // Imports states from context
     const {
         modalState,
-        setModalState
+        setModalState,
+        modalRef
     } = useSeenItContext();
 
     const handleClose = (e) => {

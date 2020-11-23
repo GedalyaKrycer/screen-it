@@ -47,6 +47,7 @@ export function SeenItProvider({ children }) {
 
     }, [resultsArray])
 
+
     return (
         <SeenItContext.Provider
             value={{
