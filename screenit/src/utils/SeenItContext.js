@@ -21,6 +21,9 @@ export function SeenItProvider({ children }) {
     // Stores state for the id of a result object that is being edited
     const [resultEditId, setResultEditId] = useState(null);
 
+    // Stores state for the current results when editing
+    const [currentResult, setCurrentResult] = useState(null);
+
 
     // State that controls if modal should open/close
     const [modalState, setModalState] = useState(false);
@@ -38,7 +41,9 @@ export function SeenItProvider({ children }) {
                 resultEditId,
                 setResultEditId,
                 modalState,
-                setModalState
+                setModalState,
+                currentResult,
+                setCurrentResult
             }}
         >
             {children}

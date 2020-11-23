@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
 import FormValidation from '../FormValidation/FormValidation';
@@ -16,7 +16,9 @@ const Form = () => {
         resultsArray,
         resultEditId,
         setResultEditId,
-        setModalState
+        setModalState,
+        modalState,
+        currentResult
     } = useSeenItContext();
 
     // State for category field Error
@@ -33,6 +35,21 @@ const Form = () => {
 
     // State for category field Error
     const [categoryError, setCategoryError] = useState(false);
+
+
+    useEffect(() => {
+        // Every time use effect runs clear values
+        setMoveName('');
+        setCategory('');
+        setRating(null);
+
+
+        // Update form values with the curren result to be edited
+        if (modalState) { setMoveName(currentResult.movieName) }
+        if (modalState) { setCategory(currentResult.category) }
+        if (modalState) { setRating(currentResult.rating) }
+    }, [modalState, currentResult])
+
 
 
     // Form Submit 

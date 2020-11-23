@@ -10,7 +10,8 @@ const ResultRow = () => {
         resultsArray,
         setResultsArray,
         setResultEditId,
-        setModalState
+        setModalState,
+        setCurrentResult
     } = useSeenItContext();
 
 
@@ -94,6 +95,13 @@ const ResultRow = () => {
 
                         // Passes this results id to form
                         setResultEditId(result.id);
+
+                        // Passes this result to form value
+                        setCurrentResult({
+                            movieName: result.movieName,
+                            category: result.category,
+                            rating: result.rating
+                        });
 
                         // Opens Modal
                         setModalState(true);

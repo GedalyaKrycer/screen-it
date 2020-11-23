@@ -11,8 +11,7 @@ const Modal = ({ children }) => {
     } = useSeenItContext();
 
     const handleClose = (e) => {
-        e.stopPropagation()
-        console.log("Modal Click");
+        e.stopPropagation();
 
         // Closes modal
         setModalState(false);
