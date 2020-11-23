@@ -12,9 +12,38 @@ Table Of Contents
 1. Main Code
 ———————————————————————————————————————————————— */
 header {
-    padding: 40px;
+    padding: 37px 40px;
     border-bottom: 1px solid var(--grey3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.header__btn {
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 14px 30px;
+    font-size: 20px;
+}
+
+.header__btn--active {
+    background: none;
+    border: 1px solid var(--warning);
+    color: var(--warning);
+    transition: all ease .3s
+}
+
+.header__btn--active:hover {
+    background: var(--warning);
+    color: white;
+}
+
+.header__btn--disabled {
+    background: none;
+    border: 1px solid var(--grey2);
+    color: var(--grey2);
+}
+
 
 
 /* ————————————————————————————————————————————————
@@ -23,5 +52,13 @@ header {
 @media screen and (max-width: 375px) {
     header {
         padding: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .header__btn {
+        padding: 10px 14px;
     }
 }
