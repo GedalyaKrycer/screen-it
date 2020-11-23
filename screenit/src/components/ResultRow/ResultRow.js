@@ -22,7 +22,9 @@ const ResultRow = () => {
     const [slideClassIndex, setSlideClassIndex] = useState(null);
 
 
+    // const localData = localStorage.getItem('results');
 
+    // localData ? setResultsArray(JSON.parse(localData)) : setResultsArray([]);
 
 
     return (

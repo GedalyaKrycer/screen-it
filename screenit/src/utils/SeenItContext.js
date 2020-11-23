@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 const SeenItContext = React.createContext();
 
@@ -28,6 +28,24 @@ export function SeenItProvider({ children }) {
     // State that controls if modal should open/close
     const [modalState, setModalState] = useState(false);
 
+
+    // Pulls resultsArray from local storage
+    useEffect(() => {
+
+        const localData = localStorage.getItem('results');
+
+        if (localData) {
+            setResultsArray(JSON.parse(localData))
+        }
+
+    }, [])
+
+
+    // Saves resultsArray to local storage
+    useEffect(() => {
+        localStorage.setItem('results', JSON.stringify(resultsArray));
+
+    }, [resultsArray])
 
     return (
         <SeenItContext.Provider

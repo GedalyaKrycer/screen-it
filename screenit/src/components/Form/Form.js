@@ -48,7 +48,7 @@ const Form = () => {
         if (modalState) { setMoveName(currentResult.movieName) }
         if (modalState) { setCategory(currentResult.category) }
         if (modalState) { setRating(currentResult.rating) }
-    }, [modalState, currentResult])
+    }, [modalState, currentResult, setRating])
 
 
 
@@ -131,8 +131,6 @@ const Form = () => {
                         id: Math.random() * imdbMovieID.length
                     }, ...prevState])
                 }
-
-
 
 
             })

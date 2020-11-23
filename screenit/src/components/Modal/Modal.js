@@ -11,6 +11,8 @@ const Modal = ({ children }) => {
     } = useSeenItContext();
 
     const handleClose = (e) => {
+
+        // Controls event delegation from bubbling
         e.stopPropagation();
 
         // Closes modal
