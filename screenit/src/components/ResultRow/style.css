@@ -43,7 +43,7 @@ Table Of Contents
     transition: all ease-in .3s;
 }
 
-.result-row:hover {
+.result-row__movie-info:hover {
     background: var(--primary-light);
 }
 
