@@ -37,6 +37,7 @@ Recreate the provided movie tracker design using HTML/CSS/JS but preferably with
 * Edit functionality has been added for results.
 * Local storage has been added to preserve entries. 
 * Clear All button removes all entries at once and disables when no entries are there. 
+* Fixed several bugs from v1.
 
 
 ---
