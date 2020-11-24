@@ -111,7 +111,7 @@ const ResultRow = () => {
                             setModalState(true);
 
                             // Closes the result row
-                            setSlideClassControl(!slideClassControl)
+                            setSlideClassControl(!slideClassControl);
 
                         }
 
@@ -144,7 +144,7 @@ const ResultRow = () => {
                                         />
                                     </div>
 
-                                    <div className="result-row__plus" >
+                                    <div className="result-row__plus">
                                         <FaPlus />
                                     </div>
 
