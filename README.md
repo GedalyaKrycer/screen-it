@@ -3,15 +3,6 @@
 
 **Objective:** Recreate the provided movie tracker design using HTML/CSS/JS but preferably with React.  
 
----
-
-
-
-## Trello Board (v1/v2)
-https://trello.com/b/s8Ciuzfa
-
-
----
 
 ## Version 2
 
@@ -56,7 +47,7 @@ https://www.figma.com/file/QDFXvzCesbB6eX0gDPSsAQ/Planning-Center-V1-Coding-Chal
 
 #### Key Features 
 
-* To help with your evaluation and my production process — the entire project was tracked in the above Trello board. This allows further transparency into my workflows, such as [time spent](https://trello.com/c/te2ZPyp6), [tutorials used](https://trello.com/c/ZQ6hs0bG), and much more. 
+* To help with your evaluation and my production process — the entire project was tracked in this [Trello board](https://trello.com/b/s8Ciuzfa). This allows further transparency into my workflows, such as [time spent](https://trello.com/c/te2ZPyp6), [tutorials used](https://trello.com/c/ZQ6hs0bG), and much more. 
 
 * To help simulate my typical design approach, I also rebuilt the provided design in Figma. (Still keeping the original layout spec.) This includes a small design system that has new components, color styles, and font styles. Doing so helped streamline the process in the long run when I had to add to the design for additional features. 
 
