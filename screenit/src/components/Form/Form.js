@@ -78,6 +78,8 @@ const Form = () => {
         axios.get(omdbUrl)
             .then((res) => {
 
+                console.log(res.data)
+
                 // Stores IMDB ID
                 let imdbMovieID = JSON.stringify(res.data.imdbID);
 
