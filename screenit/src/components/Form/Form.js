@@ -44,7 +44,7 @@ const Form = () => {
         setRating(null);
 
 
-        // Update form values with the curren result to be edited
+        // Update form values with the current result to be edited
         if (modalState) { setMoveName(currentResult.movieName) }
         if (modalState) { setCategory(currentResult.category) }
         if (modalState) { setRating(currentResult.rating) }
@@ -88,7 +88,7 @@ const Form = () => {
                     imdbMovieID = "tt1333032";
                 }
 
-
+                // EDIT VS POSTING
                 // If an editId is passed in then that result object gets replaced 
                 // Else a new object is added
                 if (editId) {
@@ -112,8 +112,6 @@ const Form = () => {
 
                     // Updates the array with the new info
                     setResultsArray(resultArrayCopy);
-
-
 
                     // Closes modal 
                     setModalState(false);
@@ -153,30 +151,23 @@ const Form = () => {
             <form onSubmit={(e) => handleSubmit(e, resultEditId)}>
 
                 {/* Name of movie */}
-                <div className="form__input-group">
-                    <label
-                        htmlFor="nameInput"
-                        className="form__label">Name</label>
-
+                <label className="form__label form__input-group">
+                    Name
+                    
                     <input
-                        id="nameInput"
                         type="text"
                         placeholder="Movie name"
                         className="form__input"
                         value={movieName}
                         onChange={(e) => setMoveName(e.target.value)}
                     />
-                </div>
+                </label>
 
                 {/* Category */}
-                <div className="form__input-group">
-                    <label
-                        className="form__label"
-                        htmlFor="categorySelect"
-                    >Category</label>
+                <label className="form__label form__input-group">
+                    Category
                     <select
                         value={category}
-                        id="categorySelect"
                         onChange={(e) => setCategory(e.currentTarget.value)}
                         className={`form__select 
                         ${!category ? "form__select--active" : null}`}>
@@ -193,8 +184,7 @@ const Form = () => {
                         <option value="Cartoons/Animations">Cartoons/Animations</option>
                         <option value="Other">Other</option>
                     </select>
-
-                </div>
+                </label>
 
                 {/* Rating */}
                 <div className="form__input-group--rating">
