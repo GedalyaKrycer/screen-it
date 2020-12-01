@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 const SeenItContext = React.createContext();
 
@@ -18,6 +18,34 @@ export function SeenItProvider({ children }) {
     // State for Results Data
     const [resultsArray, setResultsArray] = useState([]);
 
+    // Stores state for the id of a result object that is being edited
+    const [resultEditId, setResultEditId] = useState(null);
+
+    // Stores state for the current results when editing
+    const [currentResult, setCurrentResult] = useState(null);
+
+
+    // State that controls if modal should open/close
+    const [modalState, setModalState] = useState(false);
+
+
+    // Pulls resultsArray from local storage
+    useEffect(() => {
+
+        const localData = localStorage.getItem('results');
+
+        if (localData) {
+            setResultsArray(JSON.parse(localData))
+        }
+
+    }, [])
+
+
+    // Saves resultsArray to local storage
+    useEffect(() => {
+        localStorage.setItem('results', JSON.stringify(resultsArray));
+
+    }, [resultsArray])
 
 
     return (
@@ -28,7 +56,13 @@ export function SeenItProvider({ children }) {
                 starHover,
                 setStarHover,
                 resultsArray,
-                setResultsArray
+                setResultsArray,
+                resultEditId,
+                setResultEditId,
+                modalState,
+                setModalState,
+                currentResult,
+                setCurrentResult
             }}
         >
             {children}

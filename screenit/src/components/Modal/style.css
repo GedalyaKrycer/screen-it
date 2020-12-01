@@ -11,38 +11,51 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-header {
-    padding: 37px 40px;
-    border-bottom: 1px solid var(--grey3);
+
+.modal--show {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.85);
+    transition: all 0.3s ease-out;
 }
 
-.header__btn {
+.modal--hide {
+    display: none;
+    transition: all 0.3s ease-out;
+}
+
+
+.modal__content {
+    position: relative;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
-    border-radius: 8px;
-    padding: 14px 30px;
-    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: rotate(45deg);
+    font-size: 1.3rem;
+    color: var(--grey1);
     cursor: pointer;
+    transition: color .2s ease;
 }
 
-.header__btn--active {
-    background: none;
-    border: 1px solid var(--warning);
-    color: var(--warning);
-    transition: all ease .3s
-}
-
-.header__btn--active:hover {
-    background: var(--warning);
-    color: white;
-}
-
-.header__btn--disabled {
-    background: none;
-    border: 1px solid var(--grey2);
-    color: var(--grey2);
+.modal__close:hover {
+    color: var(--primary);
 }
 
 
@@ -50,16 +63,11 @@ header {
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
-@media screen and (max-width: 375px) {
-    header {
-        padding: 20px;
-    }
 
-    h1 {
-        font-size: 34px;
-    }
-
-    .header__btn {
-        padding: 10px 14px;
+@media screen and (min-width: 476px) {
+    
+    .modal__content {
+        padding: 60px;
+        max-width: 600px;
     }
 }

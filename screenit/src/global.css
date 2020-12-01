@@ -18,7 +18,9 @@ Table Of Contents
 ———————————————————————————————————————————————— */
 :root {
   --primary: #61A0FF;
+  --primary-light: #ecf4ff;
   --secondary: #FFC93D;
+  --warning: #FA2929;
   --grey1: #AAAAAA;
   --grey2: #CCCCCC;
   --grey3: #EEEEEE;
