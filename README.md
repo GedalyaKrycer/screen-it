@@ -1,12 +1,12 @@
 # screen-it
 
 
-**Objective:** Recreate the provided movie tracker design using HTML/CSS/JS but preferably with React.  
+**Objective:** Recreate the provided movie tracker design using HTML/CSS/JS but preferably with React, within 24 hours.
 
 
 ## Version 2
 
-*These items were added after the 24 hour deadline.* 
+*These items were added after the initial 24 hour deadline.* 
 
 #### Deployed Link v2
 https://screenit2.netlify.app/
@@ -36,13 +36,16 @@ https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/Planning-Center-V2-Coding-Chal
 
 ## Version 1
 
-*These items were completed within the 24 hour deadline.* 
+*These items were completed within the initial 24 hour deadline.* 
 
 #### Deployed Link v1
 https://screenit.netlify.app/
 
 #### Figma Link v1
 https://www.figma.com/file/QDFXvzCesbB6eX0gDPSsAQ/Planning-Center-V1-Coding-Challenge?node-id=0%3A1
+
+#### GitHub Branch 
+https://github.com/GedalyaKrycer/screen-it/tree/v1
 
 
 #### Key Features 
