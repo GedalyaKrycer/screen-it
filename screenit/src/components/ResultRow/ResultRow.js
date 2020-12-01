@@ -23,11 +23,6 @@ const ResultRow = () => {
     const [slideClassIndex, setSlideClassIndex] = useState(null);
 
 
-    // const localData = localStorage.getItem('results');
-
-    // localData ? setResultsArray(JSON.parse(localData)) : setResultsArray([]);
-
-
     return (
         <>
             <div className="results__overflow">
@@ -37,14 +32,15 @@ const ResultRow = () => {
 
                         // START Avatar —————————————————————————————————|
 
-                        // Take the movie's name and creates a new array, splitting on the spaces and special characters, but stops after 3 items.
-                        // const avatarArray = result.movieName.split(/[^A-Z0-9]/ig).slice(0, 3)
+                        // Take the movie's name and creates a new array, splitting on the spaces and special characters
                         let avatarArray = result.movieName.trim().split(/[^A-Z0-9]/ig);
-                        console.log(avatarArray);
 
+                        // If the name has more then 3 words and has a special character before the 4th word, then grab the 4th word
                         if (avatarArray.length > 3 && avatarArray[4] !== '') {
                             avatarArray = avatarArray.slice(0, 5);
                         } else {
+
+                            // Otherwise grab first 3 words
                             avatarArray = avatarArray.slice(0, 3);
                         }
 
