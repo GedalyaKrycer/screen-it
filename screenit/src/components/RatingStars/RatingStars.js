@@ -18,7 +18,7 @@ const RatingStars = ({ disableClick, stateValues }) => {
         <div className="ratings" ref={el => starRef = el}>
 
             {/* Creates an array of 5 to duplicate the stars */}
-            {[...Array(5)].map((star, index) => {
+            {[...Array(5)].map((_, index) => {
 
                 // Makes the values start at "1" instead of "0"
                 const ratingValue = index + 1;
