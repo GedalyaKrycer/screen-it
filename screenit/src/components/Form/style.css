@@ -17,21 +17,13 @@ Table Of Contents
     grid-gap: 24px;
     grid-template-columns: 100px 1fr;
     align-items: center;
-}
-
-.form__input-group {
     margin-bottom: 24px;
-}
-
-.form__input-group--rating {
-    margin: 40px 0;
 }
 
 .form__label {
   font-size: 24px;
   font-weight: 600;
   line-height: 29px;
-  /* margin: 0; */
 }
 
 .form__select {
@@ -116,7 +108,6 @@ Table Of Contents
 @media screen and (max-width: 375px) {
 
     .form__input-group--rating {
-        margin: 30px 0 40px;
         grid-gap: 8px;
     }
 
@@ -124,5 +115,9 @@ Table Of Contents
     .form__select,
     .form__submit-btn {
         font-size: 20px;
+    }
+
+    .form__submit-btn {
+        margin-bottom: 16px;
     }
 }
