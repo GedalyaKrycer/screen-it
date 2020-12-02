@@ -5,6 +5,7 @@ import { useSeenItContext } from '../../utils/SeenItContext';
 import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
 import Avatar from "../Avatar/Avatar";
+import NameGenre from "../NameGenre/NameGenre";
 
 
 const ResultRow = () => {
@@ -48,15 +49,14 @@ const ResultRow = () => {
                                     {/* Avatar */}
                                     <Avatar movieName={result.movieName} />
 
-                                    {/* Name and Category */}
-                                    <div className="result-row__txt">
-                                        <h2 className="result-row__movie-name">{result.movieName}</h2>
-                                        <h3 className="result-row__category">{result.category}</h3>
-                                    </div>
+                                    {/* Name and Genre */}
+                                    <NameGenre
+                                        movieName={result.movieName}
+                                        genre={result.category}
+                                    />
 
                                     {/* Star Rating */}
                                     <div className="result-row__rating" >
-
                                         <RatingStars
                                             disableClick={true}
                                             stateValues={result.rating}
