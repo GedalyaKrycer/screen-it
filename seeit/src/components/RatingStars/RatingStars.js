@@ -1,12 +1,12 @@
 import React, { useRef } from 'react';
 import './style.css';
-import { useSeenItContext } from '../../utils/SeenItContext';
+import { useSeeItContext } from '../../utils/SeeItContext';
 import { TweenMax, Power3 } from 'gsap';
 
 const RatingStars = ({ disableClick, stateValues }) => {
 
     // Imports states from context
-    const { rating, setRating, starHover, setStarHover } = useSeenItContext();
+    const { rating, setRating, starHover, setStarHover } = useSeeItContext();
 
     // Ref that holds star's parent div
     let starRef = useRef();

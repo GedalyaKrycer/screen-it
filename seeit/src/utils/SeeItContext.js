@@ -1,13 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 
-const SeenItContext = React.createContext();
+const SeeItContext = React.createContext();
 
-export const useSeenItContext = () => {
-    return useContext(SeenItContext);
+export const useSeeItContext = () => {
+    return useContext(SeeItContext);
 };
 
 
-export function SeenItProvider({ children }) {
+export function SeeItProvider({ children }) {
 
     // Stores state for the star rating
     const [rating, setRating] = useState(null);
@@ -54,7 +54,7 @@ export function SeenItProvider({ children }) {
 
 
     return (
-        <SeenItContext.Provider
+        <SeeItContext.Provider
             value={{
                 rating,
                 setRating,
@@ -75,7 +75,7 @@ export function SeenItProvider({ children }) {
             }}
         >
             {children}
-        </SeenItContext.Provider>
+        </SeeItContext.Provider>
 
     );
 }

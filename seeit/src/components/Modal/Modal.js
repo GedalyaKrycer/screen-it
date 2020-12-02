@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { useSeenItContext } from '../../utils/SeenItContext';
+import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
 
 const Modal = ({ children }) => {
@@ -9,7 +9,7 @@ const Modal = ({ children }) => {
         modalState,
         setModalState,
         setResultEditId
-    } = useSeenItContext();
+    } = useSeeItContext();
 
     const handleClose = (e) => {
 

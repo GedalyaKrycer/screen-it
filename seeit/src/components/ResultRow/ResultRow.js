@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
-import { useSeenItContext } from '../../utils/SeenItContext';
+import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
 import Avatar from "../Avatar/Avatar";
@@ -16,7 +16,7 @@ const ResultRow = () => {
         setSlideClassIndex,
         slideClassControl,
         setSlideClassControl
-    } = useSeenItContext();
+    } = useSeeItContext();
 
 
     return (
@@ -24,7 +24,6 @@ const ResultRow = () => {
             <div className="results__overflow">
                 {
                     resultsArray.map((result, index) => {
-
 
                         // Captures a row click 
                         const slideItemHandle = (index) => {

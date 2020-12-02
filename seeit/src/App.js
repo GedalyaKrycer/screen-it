@@ -5,11 +5,11 @@ import Form from './components/Form/Form';
 import FilterSection from './components/FilterSection/FilterSection';
 import ResultRow from './components/ResultRow/ResultRow';
 import Modal from './components/Modal/Modal';
-import { SeenItProvider } from './utils/SeenItContext';
+import { SeeItProvider } from './utils/SeeItContext';
 
 function App() {
   return (
-    <SeenItProvider>
+    <SeeItProvider>
       <Header />
       <FilterSection>
         <Form />
@@ -18,7 +18,7 @@ function App() {
       <Modal>
         <Form />
       </Modal>
-    </SeenItProvider>
+    </SeeItProvider>
   );
 }
 

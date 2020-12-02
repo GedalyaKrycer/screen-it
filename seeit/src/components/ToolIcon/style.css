@@ -11,23 +11,17 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-.result-tools {
-    display: grid;
-    grid-template-columns: repeat(3, 68px);
-    grid-gap: 24px;
-    justify-content: end;
-    align-items: center;
-    position: absolute;
-    right: 40px;
-}
-
-.result-tools__icon {
+.tool-icon--shadow {
     border-radius: 60px;
-    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.15);
+    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.35);
     display: inline-block;
     cursor: pointer;
     height: 60px;
-   
+    transition: all .3s ease-in-out;
+}
+
+.tool-icon--shadow:hover {
+    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0);
 }
 
 
@@ -35,20 +29,4 @@ Table Of Contents
 2. Breakpoints 
 ———————————————————————————————————————————————— */
 
-@media screen and (min-width: 700px) {
-
-    .result-tools {
-        max-width: 700px;
-        margin: auto;
-    }
-    
-
-}
-
-
-@media screen and (max-width: 375px) {
-    .result-tools {
-        grid-gap: 14px;
-    }
-}
 

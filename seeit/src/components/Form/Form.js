@@ -3,7 +3,7 @@ import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
 import posterUndefined from '../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
-import { useSeenItContext } from '../../utils/SeenItContext';
+import { useSeeItContext } from '../../utils/SeeItContext';
 import axios from 'axios';
 
 
@@ -20,7 +20,7 @@ const Form = () => {
         setModalState,
         modalState,
         currentResult
-    } = useSeenItContext();
+    } = useSeeItContext();
 
     // State for category field Error
     const [ratingError, setRatingError] = useState(false);
