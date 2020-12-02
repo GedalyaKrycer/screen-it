@@ -66,7 +66,7 @@ Table Of Contents
     justify-content: center;
     align-items: center;
     font-weight: 500;
-    box-shadow: 0px 4px 12px -1px rgba(97, 160, 255, 0.3), 0px 10px 14px rgba(97, 160, 255, 0.3), 0px 3px 0px rgba(97, 160, 255, 0.5);
+    box-shadow: 0px 4px 8px -1px rgba(97, 160, 255, 0.2), 0px 6px 10px rgba(97, 160, 255, 0.25), 0px 2px 0px rgba(97, 160, 255, 0.5);
 }
 
 .result-row__avatar--lg {
@@ -110,26 +110,6 @@ Table Of Contents
     align-items: center;
 }
 
-.result-row__tools {
-    display: grid;
-    grid-template-columns: repeat(3, 68px);
-    grid-gap: 24px;
-    justify-content: end;
-    align-items: center;
-    position: absolute;
-    right: 40px;
-}
-
-.result-row__tools-icon {
-    border-radius: 60px;
-    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.15);
-    display: inline-block;
-    cursor: pointer;
-    height: 60px;
-   
-}
-
-
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
@@ -138,8 +118,7 @@ Table Of Contents
 
 
     .result-row, 
-    .result-row__parent,
-    .result-row__tools {
+    .result-row__parent {
         max-width: 700px;
         margin: auto;
     }
@@ -229,16 +208,6 @@ Table Of Contents
     .result-row--slide {
         transform: translateX(-300px);
         
-    }
-
-    .result-row__tools {
-        display: grid;
-        grid-template-columns: repeat(3, 68px);
-        grid-gap: 14px;
-        justify-content: end;
-        align-items: center;
-         position: absolute;
-        right: 40px;
     }
 }
 
