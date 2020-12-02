@@ -24,9 +24,14 @@ export function SeenItProvider({ children }) {
     // Stores state for the current results when editing
     const [currentResult, setCurrentResult] = useState(null);
 
-
     // State that controls if modal should open/close
     const [modalState, setModalState] = useState(false);
+
+    // State that controls if the result row should slide over or not
+    const [slideClassControl, setSlideClassControl] = useState(false);
+
+    // State that stores the index of the element clicked
+    const [slideClassIndex, setSlideClassIndex] = useState(null);
 
 
     // Pulls resultsArray from local storage
@@ -62,7 +67,11 @@ export function SeenItProvider({ children }) {
                 modalState,
                 setModalState,
                 currentResult,
-                setCurrentResult
+                setCurrentResult,
+                slideClassIndex,
+                setSlideClassIndex,
+                slideClassControl,
+                setSlideClassControl
             }}
         >
             {children}

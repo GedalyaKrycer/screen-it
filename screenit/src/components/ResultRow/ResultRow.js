@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
 import { useSeenItContext } from '../../utils/SeenItContext';
@@ -11,18 +11,11 @@ const ResultRow = () => {
     // Imports states from context
     const {
         resultsArray,
-        setResultsArray,
-        setResultEditId,
-        setModalState,
-        setCurrentResult
+        slideClassIndex,
+        setSlideClassIndex,
+        slideClassControl,
+        setSlideClassControl
     } = useSeenItContext();
-
-
-    // State that controls if the result row should slide over or not
-    const [slideClassControl, setSlideClassControl] = useState(false);
-
-    // State that stores the index of the element clicked
-    const [slideClassIndex, setSlideClassIndex] = useState(null);
 
 
     return (
@@ -32,8 +25,7 @@ const ResultRow = () => {
                     resultsArray.map((result, index) => {
 
 
-                        // START Result Slider —————————————————————————————————|
-                        // Captures a click 
+                        // Captures a row click 
                         const slideItemHandle = (index) => {
 
                             // Sets the index to the element
@@ -42,50 +34,7 @@ const ResultRow = () => {
                             // Sets the state that controls the slide class to true/false
                             setSlideClassControl(!slideClassControl)
                         }
-                        // END Result Slider —————————————————————————————————|
 
-
-
-                        // START Tool Buttons —————————————————————————————————| 
-
-                        // Deletes movie entry
-                        const deleteHandler = (index) => {
-
-                            // Creates an mutable copy
-                            const resultsArrayCopy = [...resultsArray];
-
-                            // Grabs the indexed item in the array and removes it
-                            resultsArrayCopy.splice(index, 1);
-
-                            // Sets the new array to state
-                            setResultsArray(resultsArrayCopy);
-
-                            setSlideClassControl(false);
-
-                        }
-
-                        // Edit movie entry
-                        const editHandler = () => {
-
-                            // Passes this results id to form
-                            setResultEditId(result.id);
-
-                            // Passes this result to form value
-                            setCurrentResult({
-                                movieName: result.movieName,
-                                category: result.category,
-                                rating: result.rating
-                            });
-
-                            // Opens Modal
-                            setModalState(true);
-
-                            // Closes the result row
-                            setSlideClassControl(!slideClassControl);
-
-                        }
-
-                        // END Tool Buttons —————————————————————————————————| 
 
                         return (
                             <div className="result-row__parent"
@@ -124,10 +73,8 @@ const ResultRow = () => {
                                 <div className="result-row__tool-wrapper">
 
                                     <ResultTools
-                                        deleteHandler={() => deleteHandler(index)}
-                                        editHandler={editHandler}
-                                        imdbMovieID={result.imdbMovieID.replace(/['"]+/g, '')}
-
+                                        result={result}
+                                        index={index}
                                     />
 
                                 </div>

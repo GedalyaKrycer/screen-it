@@ -1,13 +1,66 @@
 import React from 'react';
 import './style.css';
+import { useSeenItContext } from '../../utils/SeenItContext';
 
-const ResultTools = ({ deleteHandler, editHandler, imdbMovieID }) => {
+const ResultTools = ({ result, index }) => {
+
+    // Imports states from context
+    const {
+        resultsArray,
+        setResultsArray,
+        setResultEditId,
+        setModalState,
+        setCurrentResult,
+        slideClassControl,
+        setSlideClassControl
+    } = useSeenItContext();
+
+    // Deletes movie entry
+    const deleteHandler = (index) => {
+
+        // Creates an mutable copy
+        const resultsArrayCopy = [...resultsArray];
+
+        // Grabs the indexed item in the array and removes it
+        resultsArrayCopy.splice(index, 1);
+
+        // Sets the new array to state
+        setResultsArray(resultsArrayCopy);
+
+        setSlideClassControl(false);
+
+    }
+
+    // Edit movie entry
+    const editHandler = () => {
+
+        // Passes this results id to form
+        setResultEditId(result.id);
+
+        // Passes this result to form value
+        setCurrentResult({
+            movieName: result.movieName,
+            category: result.category,
+            rating: result.rating
+        });
+
+        // Opens Modal
+        setModalState(true);
+
+        // Closes the result row
+        setSlideClassControl(!slideClassControl);
+
+    }
+
+
+
+
     return (
         <div className="result-tools">
 
             {/* Delete Button */}
             <svg
-                onClick={deleteHandler}
+                onClick={() => deleteHandler(index)}
                 className="result-tools__icon"
                 viewBox="0 0 60 60"
                 xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +87,7 @@ const ResultTools = ({ deleteHandler, editHandler, imdbMovieID }) => {
                 rel="noreferrer noopener"
 
                 // Removes quotes from the IMDB string
-                href={`https://www.imdb.com/title/${imdbMovieID}`}>
+                href={`https://www.imdb.com/title/${result.imdbMovieID.replace(/['"]+/g, '')}`}>
                 <svg
                     className="result-tools__icon"
                     viewBox="0 0 60 60"
