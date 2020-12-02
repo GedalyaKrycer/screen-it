@@ -40,7 +40,6 @@ const ResultTools = ({ result, index }) => {
         // Passes this result to form value
         setCurrentResult({
             movieName: result.movieName,
-            category: result.category,
             rating: result.rating
         });
 

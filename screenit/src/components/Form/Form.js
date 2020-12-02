@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
+import posterUndefined from '../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
 import { useSeenItContext } from '../../utils/SeenItContext';
 import axios from 'axios';
@@ -30,23 +31,16 @@ const Form = () => {
     // State for name field Error
     const [movieNameError, setMoveNameError] = useState(false);
 
-    // State for category field 
-    const [category, setCategory] = useState('');
-
-    // State for category field Error
-    const [categoryError, setCategoryError] = useState(false);
 
 
     useEffect(() => {
         // Every time use effect runs clear values
         setMoveName('');
-        setCategory('');
         setRating(null);
 
 
         // Update form values with the current result to be edited
         if (modalState) { setMoveName(currentResult.movieName) }
-        if (modalState) { setCategory(currentResult.category) }
         if (modalState) { setRating(currentResult.rating) }
     }, [modalState, currentResult, setRating])
 
@@ -59,15 +53,12 @@ const Form = () => {
         // Validates if data was inputted
         if (!movieName) {
             return setMoveNameError(true);
-        } else if (!category || category === "default") {
-            return setCategoryError(true);
         } else if (!rating) {
             return setRatingError(true);
         }
 
         // Reset error messages to turn off
         setMoveNameError(false);
-        setCategoryError(false);
         setRatingError(false);
 
         // OMDB Image API
@@ -80,15 +71,28 @@ const Form = () => {
 
                 console.log(res.data)
 
-                // Stores IMDB ID
+                // Stores API Data
                 let imdbMovieID = JSON.stringify(res.data.imdbID);
+                let rawOmdbGenre = JSON.stringify(res.data.Genre);
+                let omdbPoster = JSON.stringify(res.data.Poster);
 
-                // Sets a fall back if the input is not valid
+                // If valid, create array from string, splits on the comma and removes any quotes
+                let omdbGenre = rawOmdbGenre ? rawOmdbGenre.replace(/['"]+/g, '').split(",").slice(0, 1) : "Genre Not Found";
+
+
+                // Sets a fall backs if the API is not valid
                 if (imdbMovieID === undefined) {
 
                     // This is the title id to "No Movie"
                     imdbMovieID = "tt1333032";
-                }
+
+                };
+                if (omdbPoster === undefined) {
+
+                    // Set poster to default image
+                    omdbPoster = posterUndefined;
+
+                };
 
                 // EDIT VS POSTING
                 // If an editId is passed in then that result object gets replaced 
@@ -106,7 +110,8 @@ const Form = () => {
                     // Updates the index matching result object in the array 
                     resultArrayCopy[resultIndex] = {
                         movieName,
-                        category,
+                        omdbGenre,
+                        omdbPoster,
                         rating,
                         imdbMovieID,
                         id: Math.random() * imdbMovieID.length
@@ -126,7 +131,8 @@ const Form = () => {
                     // Adds all new input values to an array state
                     setResultsArray((prevState) => [{
                         movieName,
-                        category,
+                        omdbGenre,
+                        omdbPoster,
                         rating,
                         imdbMovieID,
                         id: Math.random() * imdbMovieID.length
@@ -141,7 +147,6 @@ const Form = () => {
 
         // Resets all input values
         setMoveName('');
-        setCategory('');
         setRating('');
     };
 
@@ -165,28 +170,6 @@ const Form = () => {
                     />
                 </label>
 
-                {/* Category */}
-                <label className="form__label form__input-group">
-                    Category
-                    <select
-                        value={category}
-                        onChange={(e) => setCategory(e.currentTarget.value)}
-                        className={`form__select 
-                        ${!category ? "form__select--active" : null}`}>
-                        <option value="default">Select category</option>
-                        <option value="Action">Action</option>
-                        <option value="Comedy">Comedy</option>
-                        <option value="Drama">Drama</option>
-                        <option value="Romance">Romance</option>
-                        <option value="Horror">Horror</option>
-                        <option value="Thriller">Thriller</option>
-                        <option value="Documentary">Documentary</option>
-                        <option value="Fantasy">Fantasy</option>
-                        <option value="Sci-Fi">Sci-Fi</option>
-                        <option value="Cartoons/Animations">Cartoons/Animations</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </label>
 
                 {/* Rating */}
                 <div className="form__input-group--rating">
@@ -200,7 +183,6 @@ const Form = () => {
                 {/* Validate Messages */}
                 <FormValidation
                     nameErrorState={movieNameError}
-                    categoryErrorState={categoryError}
                     ratingErrorState={ratingError}
                 />
 

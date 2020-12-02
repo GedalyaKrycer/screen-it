@@ -52,7 +52,7 @@ const ResultRow = () => {
                                     {/* Name and Genre */}
                                     <NameGenre
                                         movieName={result.movieName}
-                                        genre={result.category}
+                                        genre={result.omdbGenre}
                                     />
 
                                     {/* Star Rating */}
