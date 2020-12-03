@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import resultArt from "../../img/background.svg";
+import resultArt from "../../img/background-mobile.svg";
 import { useSeeItContext } from '../../utils/SeeItContext';
 
 const ResultsInitialArt = () => {
