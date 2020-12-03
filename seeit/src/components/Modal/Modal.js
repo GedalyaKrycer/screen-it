@@ -3,11 +3,12 @@ import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
 
-const Modal = ({ children }) => {
+const Modal = ({ children, modalId }) => {
     // Imports states from context
     const {
-        modalState,
-        setModalState,
+        modalOpen,
+        setModalOpen,
+        modelIdCheck,
         setResultEditId
     } = useSeeItContext();
 
@@ -17,7 +18,7 @@ const Modal = ({ children }) => {
         e.stopPropagation();
 
         // Closes modal
-        setModalState(false);
+        setModalOpen(false);
 
         // Clears Edit ID
         setResultEditId(null);
@@ -25,7 +26,7 @@ const Modal = ({ children }) => {
 
     return (
         <div
-            className={modalState ? "modal--show" : "modal--hide"}
+            className={modalOpen && modelIdCheck === modalId ? "modal--show" : "modal--hide"}
             onClick={handleClose}
         >
             <div

@@ -15,7 +15,10 @@ function App() {
         <Form />
       </FilterSection>
       <ResultRow />
-      <Modal>
+      <Modal modalId={"headerDeleteAll"}>
+        <div></div>
+      </Modal>
+      <Modal modalId={"editForm"}>
         <Form />
       </Modal>
     </SeeItProvider>

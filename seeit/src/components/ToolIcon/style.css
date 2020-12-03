@@ -11,7 +11,8 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-.tool-icon--shadow {
+.tool-icon--shadow-warning,
+.tool-icon--shadow-primary {
     border-radius: 60px;
     box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.35);
     display: inline-block;
@@ -20,9 +21,20 @@ Table Of Contents
     transition: all .3s ease-in-out;
 }
 
-.tool-icon--shadow:hover {
+.tool-icon--shadow-warning:hover,
+.tool-icon--shadow-primary:hover {
     box-shadow: 0px 1px 4px rgba(97, 160, 255, 0);
 }
+
+.tool-icon--shadow-warning {
+    fill: var(--warning);
+}
+
+.tool-icon--shadow-primary {
+    fill: var(--primary);
+}
+
+
 
 
 /* ————————————————————————————————————————————————

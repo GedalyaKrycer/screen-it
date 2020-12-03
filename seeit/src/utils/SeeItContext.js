@@ -25,7 +25,10 @@ export function SeeItProvider({ children }) {
     const [currentResult, setCurrentResult] = useState(null);
 
     // State that controls if modal should open/close
-    const [modalState, setModalState] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
+
+    // State that caputures the id of the modal
+    const [modelIdCheck, setModelIdCheck] = useState(false);
 
     // State that controls if the result row should slide over or not
     const [slideClassControl, setSlideClassControl] = useState(false);
@@ -64,8 +67,10 @@ export function SeeItProvider({ children }) {
                 setResultsArray,
                 resultEditId,
                 setResultEditId,
-                modalState,
-                setModalState,
+                modalOpen,
+                setModalOpen,
+                modelIdCheck,
+                setModelIdCheck,
                 currentResult,
                 setCurrentResult,
                 slideClassIndex,
