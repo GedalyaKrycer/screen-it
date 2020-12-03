@@ -20,6 +20,7 @@
 * Added a toggle button to switch between card and list view
 * Removed categories dropdown, instead pulling these from the API
 * Fixed some accessibility errors
+* Added animation to results
 
 
 ---
