@@ -46,10 +46,6 @@ const ResultTools = ({ result, index, iconClassWarning, iconClassPrimary }) => {
             rating: result.rating
         });
 
-        console.log(`Result movieName: ${result.movieName}`)
-        console.log(`Result Raiting: ${result.rating}`)
-        console.log(`Result Tools: ${currentResult}`)
-
         // Tells modal to open
         setModalOpen(true);
 

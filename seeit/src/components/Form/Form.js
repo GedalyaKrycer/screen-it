@@ -37,7 +37,6 @@ const Form = () => {
 
     useEffect(() => {
 
-        console.log("Form use Effect Ran")
         // Every time use effect runs clear values
         setMoveName('');
         setRating(null);
@@ -78,7 +77,7 @@ const Form = () => {
         axios.get(omdbUrl)
             .then((res) => {
 
-                console.log(res.data)
+                // console.log(res.data)
 
                 // Stores API Data
                 let imdbMovieID = JSON.stringify(res.data.imdbID);
@@ -96,10 +95,16 @@ const Form = () => {
                     imdbMovieID = "tt1333032";
 
                 };
-                if (omdbPoster === undefined) {
+
+                // Updates if the poster is not found
+                let posterError = false;
+
+                if (omdbPoster === undefined || omdbPoster === '"N/A"') {
 
                     // Set poster to default image
                     omdbPoster = posterUndefined;
+
+                    posterError = true;
 
                 };
 
@@ -121,6 +126,7 @@ const Form = () => {
                         movieName,
                         omdbGenre,
                         omdbPoster,
+                        posterError,
                         rating,
                         imdbMovieID,
                         id: Math.random() * imdbMovieID.length
@@ -145,6 +151,7 @@ const Form = () => {
                         movieName,
                         omdbGenre,
                         omdbPoster,
+                        posterError,
                         rating,
                         imdbMovieID,
                         id: Math.random() * imdbMovieID.length

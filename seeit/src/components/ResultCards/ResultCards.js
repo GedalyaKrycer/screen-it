@@ -24,8 +24,6 @@ const ResultCards = () => {
                 {
                     resultsArray.map((result, index) => {
 
-                        console.log(`ResultCard: ${result.omdbPoster}`);
-
                         // Captures a row click 
                         const cardItemHandle = (index) => {
 
@@ -60,7 +58,7 @@ const ResultCards = () => {
                                     />
 
                                     <NameGenre
-                                        movieName={null}
+                                        movieName={result.posterError ? result.movieName : null}
                                         genre={result.omdbGenre}
                                     />
                                 </div>

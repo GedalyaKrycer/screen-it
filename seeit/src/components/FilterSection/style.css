@@ -47,7 +47,7 @@ Table Of Contents
     }
 
     .filter--full {
-        padding-top: 80px;
+        padding-top: 100px;
     }
 
     .filter--full .filter__content {
@@ -65,7 +65,7 @@ Table Of Contents
     }
 
     .filter__img {
-        margin: 20px auto 0;
+        margin: 80px auto 0;
         display: block;
         max-width: 885px;
     }
