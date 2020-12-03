@@ -8,7 +8,7 @@ import Avatar from "../Avatar/Avatar";
 import NameGenre from "../NameGenre/NameGenre";
 
 
-const ResultRow = () => {
+const ResultCards = () => {
     // Imports states from context
     const {
         resultsArray,
@@ -17,8 +17,6 @@ const ResultRow = () => {
         slideClassControl,
         setSlideClassControl
     } = useSeeItContext();
-
-
 
 
     return (
@@ -40,13 +38,10 @@ const ResultRow = () => {
 
                         return (
                             <div className="result-row__parent"
-                                key={result.id}
-
-                                // This is used to stagger a CSS Animation
-                                style={{ "--delay": index }}>
+                                key={result.id}>
 
                                 {/* Row Element */}
-                                < div
+                                <div
                                     className={`result-row__movie-info ${slideClassIndex === index && slideClassControl ? 'result-row--slide' : null}`}
                                     onClick={() => slideItemHandle(index)} >
 
@@ -85,9 +80,9 @@ const ResultRow = () => {
                             </div>)
                     })
                 }
-            </div >
+            </div>
         </>
     )
 }
 
-export default ResultRow;
+export default ResultCards;

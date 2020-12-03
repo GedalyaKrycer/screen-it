@@ -25,55 +25,7 @@ Table Of Contents
     min-height: 130px;
     border-bottom: 1px solid var(--grey3);
     cursor: pointer;
-    opacity: 0;
-    --delay: 0;
-    -webkit-animation: ROW-ANIMATE-IN 0.7s calc(0.25s * var(--delay)) forwards ease-in-out; /* Safari 4+ */
-    -moz-animation:    ROW-ANIMATE-IN 0.7s calc(0.25s * var(--delay)) forwards ease-in-out; /* Fx 5+ */
-    -o-animation:      ROW-ANIMATE-IN 0.7s calc(0.25s * var(--delay)) forwards ease-in-out; /* Opera 12+ */
-    animation:         ROW-ANIMATE-IN 0.7s calc(0.25s * var(--delay)) forwards ease-in-out; /* IE 10+, Fx 29+ */
 }
-
-@-webkit-keyframes ROW-ANIMATE-IN {
-    0%   { 
-        opacity: 0;
-        transform: translateX(-20px); 
-    }
-    100% { 
-        opacity: 1;
-        transform: translateX(0); 
-    }
-  }
-  @-moz-keyframes ROW-ANIMATE-IN {
-    0%   { 
-        opacity: 0;
-        transform: translateX(-20px); 
-    }
-    100% { 
-        opacity: 1;
-        transform: translateX(0); 
-    }
-  }
-  @-o-keyframes ROW-ANIMATE-IN {
-    0%   { 
-        opacity: 0;
-        transform: translateX(-20px); 
-    }
-    100% { 
-        opacity: 1;
-        transform: translateX(0); 
-    }
-  }
-  @keyframes ROW-ANIMATE-IN {
-    0%   { 
-        opacity: 0;
-        transform: translateX(-20px); 
-    }
-    100% { 
-        opacity: 1;
-        transform: translateX(0); 
-    }
-  }
-
 
 .result-row__movie-info {
     padding: 33px 40px;

@@ -16,7 +16,6 @@ const FilterSection = ({ children }) => {
 
                 <div className="filter__content">
                     {children}
-
                 </div>
 
                 <img

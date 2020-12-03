@@ -23,7 +23,7 @@ Table Of Contents
     left: 0;
     top: 0;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0,0,0,0.9);
     transition: all 0.3s ease-out;
 }
 
@@ -41,7 +41,52 @@ Table Of Contents
     padding: 20px;
     border-radius: 10px;
     transition: all 0.3s ease-out;
+    -webkit-animation: MODAL-FADE-UP 0.5s forwards ease-in-out; /* Safari 4+ */
+    -moz-animation:    MODAL-FADE-UP 0.5s forwards ease-in-out; /* Fx 5+ */
+    -o-animation:      MODAL-FADE-UP 0.5s forwards ease-in-out; /* Opera 12+ */
+    animation:         MODAL-FADE-UP 0.5s forwards ease-in-out; /* IE 10+, Fx 29+ */
 }
+
+@-webkit-keyframes MODAL-FADE-UP {
+    0%   { 
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @-moz-keyframes MODAL-FADE-UP {
+    0%   { 
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @-o-keyframes MODAL-FADE-UP {
+    0%   { 
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @keyframes MODAL-FADE-UP {
+    0%   { 
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
 
 .modal__close {
     position: absolute;
