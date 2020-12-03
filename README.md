@@ -6,6 +6,22 @@
 **Deployed:** https://screenit.netlify.app/
 
 
+---
+## Version 3
+*These items were added after the initial 24 hour deadline.* 
+
+#### Key Features 
+
+* Added about 10 new components, implementing greater "Separation of concerns". This also allowed for small components (like icons and modals) to be reused across the app. 
+* Updated name, created logo and made many minor misc ui updates. 
+* Added illustrations for the default state.
+* Added a toggle button to switch between card and list view
+* Removed categories dropdown, instead pulling these from the API
+* Fixed some accessibility errors
+
+
+---
+
 ## Version 2
 
 *These items were added after the initial 24 hour deadline.* 
@@ -16,8 +32,8 @@ https://screenit2.netlify.app/
 #### GitHub Branch 
 https://github.com/GedalyaKrycer/screen-it/tree/upgrades
 
-#### Figma Link v2
-https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/Planning-Center-V2-Coding-Challenge?node-id=0%3A1
+#### Figma Link
+https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/See-It-Updates?node-id=113%3A1
 
 
 #### Key Features 

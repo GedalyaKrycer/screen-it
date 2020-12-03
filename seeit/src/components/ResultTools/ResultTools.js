@@ -13,7 +13,6 @@ const ResultTools = ({ result, index, iconClassWarning, iconClassPrimary }) => {
         setModalOpen,
         setModelIdCheck,
         setCurrentResult,
-        currentResult,
         slideClassControl,
         setSlideClassControl
     } = useSeeItContext();
