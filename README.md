@@ -5,6 +5,8 @@
 
 **Deployed:** https://screenit.netlify.app/
 
+**Figma Link:** https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/See-It-Updates?node-id=113%3A1
+
 
 ---
 ## Version 3
