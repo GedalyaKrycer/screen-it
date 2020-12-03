@@ -6,6 +6,8 @@ import FilterSection from './components/FilterSection/FilterSection';
 import ResultRow from './components/ResultRow/ResultRow';
 import Modal from './components/Modal/Modal';
 import DeleteAll from './components/DeleteAll/DeleteAll';
+import ResultsBody from './components/ResultsBody/ResultsBody';
+import ResultsInitialArt from './components/ResultsInitialArt/ResultsInitialArt';
 import { SeeItProvider } from './utils/SeeItContext';
 
 function App() {
@@ -15,9 +17,10 @@ function App() {
       <FilterSection>
         <Form />
       </FilterSection>
-      <ResultRow />
-      {/* <ResultsBody>
-      </ResultsBody> */}
+      <ResultsBody>
+        <ResultRow />
+        <ResultsInitialArt />
+      </ResultsBody>
 
       {/* Modals */}
       <Modal modalId={"headerDeleteAll"}>

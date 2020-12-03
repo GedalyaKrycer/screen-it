@@ -11,45 +11,47 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-.filter {
-    border-bottom: 1px solid var(--grey3);
+.result-art {
+    width: 100%;
+    margin-top: 50px;
 }
 
 
-.filter__content {
-    padding: 40px;
+.result-art__img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
 }
-
-
-
-.filter__input-group {
-    margin-bottom: 24px;
-}
-
-
-
-
-
 
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
 
 @media screen and (min-width: 700px) {
-    .filter {
-        background: var(--grey4)
+
+    .result-art {
+        display: none;
     }
 
-    .filter__content {
-        padding: 100px 40px;
-        max-width: 450px;
-        margin: auto;
-    }
+    
+
 }
+
+@media screen and (min-width: 601px) {
+
+
+    
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+}
+
 
 @media screen and (max-width: 375px) {
-    .filter__content {
-        padding: 20px;
-    }
+
 
 }
+
