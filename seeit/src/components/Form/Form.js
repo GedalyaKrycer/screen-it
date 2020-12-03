@@ -17,8 +17,10 @@ const Form = () => {
         resultsArray,
         resultEditId,
         setResultEditId,
-        setModalState,
-        modalState,
+        setModalOpen,
+        modalOpen,
+        modelIdCheck,
+        setModelIdCheck,
         currentResult
     } = useSeeItContext();
 
@@ -40,9 +42,14 @@ const Form = () => {
 
 
         // Update form values with the current result to be edited
-        if (modalState) { setMoveName(currentResult.movieName) }
-        if (modalState) { setRating(currentResult.rating) }
-    }, [modalState, currentResult, setRating])
+        if (modelIdCheck === "editForm") { 
+            setMoveName(currentResult.movieName) 
+        }
+        if (modelIdCheck === "editForm") { 
+            setRating(currentResult.rating) 
+        }
+        
+    }, [modalOpen, currentResult, setRating, modelIdCheck])
 
 
 
@@ -121,7 +128,10 @@ const Form = () => {
                     setResultsArray(resultArrayCopy);
 
                     // Closes modal 
-                    setModalState(false);
+                    setModalOpen(false);
+
+                    // Resets modal id
+                    setModelIdCheck(null)
 
                     // Resets the edit id to nothing
                     setResultEditId(null);

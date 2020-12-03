@@ -4,7 +4,6 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import FilterSection from './components/FilterSection/FilterSection';
 import ResultRow from './components/ResultRow/ResultRow';
-import ResultsBody from './components/ResultsBody/ResultsBody';
 import Modal from './components/Modal/Modal';
 import DeleteAll from './components/DeleteAll/DeleteAll';
 import { SeeItProvider } from './utils/SeeItContext';
