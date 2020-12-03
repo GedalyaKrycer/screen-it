@@ -18,17 +18,10 @@ Table Of Contents
     box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.35);
     display: inline-block;
     cursor: pointer;
-    height: 60px;
+    height: 55px;
     transition: all .3s ease-in-out;
 }
 
-.tool-icon--shadow-primary:hover {
-    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0);
-}
-
-.tool-icon--shadow-warning:hover {
-    opacity: .5;
-}
 
 .tool-icon--shadow-warning {
     fill: var(--warning);
@@ -40,6 +33,33 @@ Table Of Contents
 
 .tool-icon--disabled {
     fill: var(--grey3);
+}
+
+.tool-icon--stroke-primary,
+.tool-icon--stroke-warning {
+    border-radius: 60px;
+    border: 1px solid var(--grey3);
+    display: inline-block;
+    cursor: pointer;
+    height: 50px;
+    transition: all .3s ease-in-out;
+
+}
+
+.tool-icon--stroke-primary {
+    fill: var(--primary);
+}
+
+.tool-icon--stroke-warning {
+    fill: var(--warning);
+}
+
+
+.tool-icon--shadow-warning:hover,
+.tool-icon--shadow-primary:hover,
+.tool-icon--stroke-warning:hover,
+.tool-icon--stroke-primary:hover {
+    opacity: .5;
 }
 
 

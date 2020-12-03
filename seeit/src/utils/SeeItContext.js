@@ -36,6 +36,12 @@ export function SeeItProvider({ children }) {
     // State that stores the index of the element clicked
     const [slideClassIndex, setSlideClassIndex] = useState(null);
 
+    // State that controls if the result card should show tools or not
+    const [cardClassControl, setCardClassControl] = useState(false);
+
+    // State that stores the index of the card element clicked
+    const [cardClassIndex, setCardClassIndex] = useState(null);
+
 
     // Pulls resultsArray from local storage
     useEffect(() => {
@@ -76,7 +82,11 @@ export function SeeItProvider({ children }) {
                 slideClassIndex,
                 setSlideClassIndex,
                 slideClassControl,
-                setSlideClassControl
+                setSlideClassControl,
+                cardClassIndex,
+                setCardClassIndex,
+                cardClassControl,
+                setCardClassControl
             }}
         >
             {children}

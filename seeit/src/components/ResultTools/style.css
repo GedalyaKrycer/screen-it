@@ -15,10 +15,7 @@ Table Of Contents
     display: grid;
     grid-template-columns: repeat(3, 68px);
     grid-gap: 24px;
-    justify-content: end;
     align-items: center;
-    position: absolute;
-    right: 40px;
 }
 
 .result-tools__icon--shadow {
@@ -47,7 +44,7 @@ Table Of Contents
 
 @media screen and (max-width: 375px) {
     .result-tools {
-        grid-gap: 14px;
+        grid-gap: 8px;
     }
 }
 

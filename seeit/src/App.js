@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Form from './components/Form/Form';
 import FilterSection from './components/FilterSection/FilterSection';
 import ResultRow from './components/ResultRow/ResultRow';
+import ResultCards from './components/ResultCards/ResultCards';
 import Modal from './components/Modal/Modal';
 import DeleteAll from './components/DeleteAll/DeleteAll';
 import ResultsBody from './components/ResultsBody/ResultsBody';
@@ -19,6 +20,7 @@ function App() {
       </FilterSection>
       <ResultsBody>
         <ResultRow />
+        <ResultCards />
         <ResultsInitialArt />
       </ResultsBody>
 

@@ -75,11 +75,14 @@ const ResultRow = () => {
 
                                 {/* Tool sub layer */}
                                 <div className="result-row__tool-wrapper">
-
-                                    <ResultTools
-                                        result={result}
-                                        index={index}
-                                    />
+                                    <div className="result-row__tool-shift">
+                                        <ResultTools
+                                            iconClassPrimary={"tool-icon--shadow-primary"}
+                                            iconClassWarning={"tool-icon--shadow-warning"}
+                                            result={result}
+                                            index={index}
+                                        />
+                                    </div>
 
                                 </div>
                             </div>)
