@@ -18,6 +18,7 @@ Table Of Contents
 ———————————————————————————————————————————————— */
 :root {
   --primary: #61A0FF;
+  --primary-dark: #5E94E7;
   --primary-light: #ecf4ff;
   --secondary: #FFC93D;
   --warning: #FA2929;

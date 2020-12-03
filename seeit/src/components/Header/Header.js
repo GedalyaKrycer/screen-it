@@ -34,6 +34,7 @@ const Header = () => {
             <Logo />
             <div className="header__btn-group">
                 <button
+                    ariaLabel="Toggle View"
                     className={`header__btn ${resultsArray.length >= 1 ? "header__btn--active" : "header__btn--disabled"}`}
                     disabled={resultsArray.length >= 1 ? false : true}
                     onClick={switchView}
@@ -53,6 +54,7 @@ const Header = () => {
 
                 </button>
                 <button
+                    ariaLabel="Delete all results"
                     className={`header__btn ${resultsArray.length >= 1 ? "header__btn--active" : "header__btn--disabled"}`}
                     disabled={resultsArray.length >= 1 ? false : true}
                     onClick={openModal}
