@@ -42,6 +42,9 @@ export function SeeItProvider({ children }) {
     // State that stores the index of the card element clicked
     const [cardClassIndex, setCardClassIndex] = useState(null);
 
+    // State that stores the index of the card element clicked
+    const [viewToggle, setViewToggle] = useState("list");
+
 
     // Pulls resultsArray from local storage
     useEffect(() => {
@@ -86,7 +89,9 @@ export function SeeItProvider({ children }) {
                 cardClassIndex,
                 setCardClassIndex,
                 cardClassControl,
-                setCardClassControl
+                setCardClassControl,
+                viewToggle,
+                setViewToggle
             }}
         >
             {children}
