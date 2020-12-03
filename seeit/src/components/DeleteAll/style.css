@@ -11,30 +11,53 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 1. Main Code
 ———————————————————————————————————————————————— */
-.tool-icon--shadow-warning,
-.tool-icon--shadow-primary {
-    border-radius: 60px;
-    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0.35);
-    display: inline-block;
+.delete {
+    text-align: center;
+}
+
+.delete__text {
+    max-width: 280px;
+    margin-bottom: 25px;
+}
+
+.delete__btn-group {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 60% 1fr;
+}
+
+.delete__btn {
+    padding: 14px 10px;
+    font-weight: 600;
+    font-size: 20px;
+    border-radius: 8px;
+    border-style: none;
     cursor: pointer;
-    height: 60px;
-    transition: all .3s ease-in-out;
+    transition: ease .5s;
 }
 
-.tool-icon--shadow-primary:hover {
-    box-shadow: 0px 1px 4px rgba(97, 160, 255, 0);
+.delete__btn--cancel {
+    border-color: var(--primary);
+    box-shadow: 0px 2px 4px rgba(97, 160, 255, 0.5), 0px 4px 8px rgba(97, 160, 255, 0.25);
+    background: var(--priGrad90Deg);
+    color: white;
 }
 
-.tool-icon--shadow-warning:hover {
-    opacity: .5;
+.delete__btn--cancel:hover {
+    box-shadow: none;
+    background-color: var(--primary);
+    opacity: .8;
 }
 
-.tool-icon--shadow-warning {
-    fill: var(--warning);
+.delete__btn--delete {
+    border: 1px solid var(--warning);
+    background: none;
+    color: var(--warning);
 }
 
-.tool-icon--shadow-primary {
-    fill: var(--primary);
+.delete__btn--delete:hover {
+    background-color: var(--warning);
+    color: white;
 }
 
 
@@ -43,5 +66,3 @@ Table Of Contents
 /* ————————————————————————————————————————————————
 2. Breakpoints 
 ———————————————————————————————————————————————— */
-
-

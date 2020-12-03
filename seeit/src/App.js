@@ -5,6 +5,7 @@ import Form from './components/Form/Form';
 import FilterSection from './components/FilterSection/FilterSection';
 import ResultRow from './components/ResultRow/ResultRow';
 import Modal from './components/Modal/Modal';
+import DeleteAll from './components/DeleteAll/DeleteAll';
 import { SeeItProvider } from './utils/SeeItContext';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
       </FilterSection>
       <ResultRow />
       <Modal modalId={"headerDeleteAll"}>
-        <div></div>
+        <DeleteAll />
       </Modal>
       <Modal modalId={"editForm"}>
         <Form />
