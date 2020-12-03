@@ -36,6 +36,8 @@ const Form = () => {
 
 
     useEffect(() => {
+
+        console.log("Form use Effect Ran")
         // Every time use effect runs clear values
         setMoveName('');
         setRating(null);

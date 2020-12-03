@@ -9,6 +9,7 @@ const Modal = ({ children, modalId }) => {
         modalOpen,
         setModalOpen,
         modelIdCheck,
+        setModelIdCheck,
         setResultEditId
     } = useSeeItContext();
 
@@ -22,6 +23,9 @@ const Modal = ({ children, modalId }) => {
 
         // Clears Edit ID
         setResultEditId(null);
+
+        // Resets modal id
+        setModelIdCheck(null)
     }
 
     return (
