@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 import Logo from "../Logo/Logo";
 import { useSeeItContext } from '../../utils/SeeItContext';
@@ -16,6 +16,11 @@ const Header = () => {
         setViewToggle
     } = useSeeItContext();
 
+    // State to hold the width of the screen
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+
+    // Opens delete modal
     const openModal = () => {
 
         // Tells modal to open
@@ -25,9 +30,41 @@ const Header = () => {
         setModelIdCheck("headerDeleteAll");
     }
 
+    // Toggles card/list view
     const switchView = () => {
         viewToggle === 'list' ? setViewToggle('cards') : setViewToggle('list');
     }
+
+
+    // Use Effect To setting Width Size
+    useEffect(() => {
+
+        // Sets current window size to state
+        const handleWinowResize = () => {
+            setWindowWidth(window.innerWidth);
+        }
+
+        // Event listener for window size changing
+        window.addEventListener('resize', handleWinowResize);
+
+        // Clean up
+        return () => {
+            window.removeEventListener('resize', handleWinowResize);
+        }
+    }, [windowWidth])
+
+
+    // Use Effect to toggle view based on window size
+    useEffect(() => {
+        windowWidth > 699 && setViewToggle('cards');
+    }, [windowWidth, setViewToggle])
+
+
+
+
+
+
+
 
     return (
         <header>

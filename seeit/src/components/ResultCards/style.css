@@ -17,9 +17,8 @@ Table Of Contents
     grid-gap: 24px;
     grid-template-columns: repeat(2, minmax(270px, 1fr));
     max-width: 700px;
-    margin: 40px auto 0;
+    margin: 40px auto 50px;
     justify-items: center;
-
 }
 
 .result-cards__frame {
@@ -154,6 +153,15 @@ Table Of Contents
 
 @media screen and (min-width: 700px) {
     
+    .result-cards {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        max-width: 1400px;
+    }
+
+    .result-cards__frame {
+
+        margin-bottom: 20px;
+    }
 
 }
 

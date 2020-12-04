@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.3005efed.chunk.css",
-    "main.js": "/static/js/main.de9dba70.chunk.js",
-    "main.js.map": "/static/js/main.de9dba70.chunk.js.map",
+    "main.css": "/static/css/main.3a43d3ef.chunk.css",
+    "main.js": "/static/js/main.d4fce495.chunk.js",
+    "main.js.map": "/static/js/main.d4fce495.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ad0f0577.js",
     "runtime-main.js.map": "/static/js/runtime-main.ad0f0577.js.map",
     "static/js/2.d15e1142.chunk.js": "/static/js/2.d15e1142.chunk.js",
@@ -12,7 +12,7 @@
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
-    "static/css/main.3005efed.chunk.css.map": "/static/css/main.3005efed.chunk.css.map",
+    "static/css/main.3a43d3ef.chunk.css.map": "/static/css/main.3a43d3ef.chunk.css.map",
     "static/js/2.d15e1142.chunk.js.LICENSE.txt": "/static/js/2.d15e1142.chunk.js.LICENSE.txt",
     "static/media/background-desktop.75e7cc14.svg": "/static/media/background-desktop.75e7cc14.svg",
     "static/media/background-mobile.a9fdc799.svg": "/static/media/background-mobile.a9fdc799.svg",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.ad0f0577.js",
     "static/js/2.d15e1142.chunk.js",
-    "static/css/main.3005efed.chunk.css",
-    "static/js/main.de9dba70.chunk.js"
+    "static/css/main.3a43d3ef.chunk.css",
+    "static/js/main.d4fce495.chunk.js"
   ]
 }
