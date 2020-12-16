@@ -3,7 +3,7 @@
 
 **Objective:** 
 
-Within 24 hours, build the supplied movie tracker design using HTML/CSS/JS but preferably with React. After the initial deadline, I also expanded upon the project to explore new features, brand elements and refactor the code. 
+Within 24 hours, build the [supplied movie tracker design](https://github.com/GedalyaKrycer/screen-it/blob/main/readme-assets/screenit-starting-design.png) using HTML/CSS/JS but preferably with React. After the initial deadline, I also expanded upon the project to explore new features, brand elements and refactor the code. 
 
 **Deployed:** 
 https://seeit.netlify.app/
