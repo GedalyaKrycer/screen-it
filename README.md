@@ -1,11 +1,15 @@
-# screen-it
+# Seeit Movie Tracker (Originally: Screen It Code Challenge)
 
 
-**Objective:** Recreate the provided movie tracker design using HTML/CSS/JS but preferably with React, within 24 hours.
+**Objective:** 
 
-**Deployed:** https://screenit.netlify.app/
+Within 24 hours, build the supplied movie tracker design using HTML/CSS/JS but preferably with React. After the initial deadline, I also expanded upon the project to explore new features, brand elements and refactor the code. 
 
-**Figma Link:** https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/See-It-Updates?node-id=113%3A1
+**Deployed:** 
+https://seeit.netlify.app/
+
+**Figma Link:** 
+https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/See-It-Updates?node-id=113%3A1
 
 
 ---
@@ -15,7 +19,7 @@
 #### Key Features 
 
 * Added about 10 new components, implementing greater "Separation of concerns". This also allowed for small components (like icons and modals) to be reused across the app. 
-* Updated name, created logo and made many minor misc ui updates. 
+* Updated name to "Seeit", created logo and made many minor misc ui updates. 
 * Added illustrations for the default state.
 * Added a toggle button to switch between card and list view
 * Removed categories dropdown, instead pulling these from the API

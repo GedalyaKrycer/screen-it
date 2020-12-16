@@ -56,7 +56,11 @@ const Header = () => {
 
     // Use Effect to toggle view based on window size
     useEffect(() => {
-        windowWidth > 699 && setViewToggle('cards');
+
+        if (windowWidth > 699) {
+            setViewToggle('cards');
+        }
+
     }, [windowWidth, setViewToggle])
 
 
