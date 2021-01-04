@@ -4,10 +4,35 @@ import './global.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import { createStore, combineReducers, compose } from 'redux';
+import { Provider } from 'react-redux';
+import modalReducer from './store/reducers/modalReducer';
+import formReducer from './store/reducers/formReducer';
+import resultsReducer from './store/reducers/resultsReducer';
+
+// All reducers are combined into a single Root Reducer
+const rootReducer = combineReducers({
+  modal: modalReducer,
+  form: formReducer,
+  results: resultsReducer
+});
+
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers()
+);
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

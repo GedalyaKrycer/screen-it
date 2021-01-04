@@ -1,14 +1,15 @@
 import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
+import { connect } from 'react-redux';
+import * as action from '../../store/actions/index';
 
 
-const DeleteAll = () => {
+const DeleteAll = ({ setModalOpen }) => {
 
     // Imports states from context
     const {
         setResultsArray,
-        setModalOpen
     } = useSeeItContext();
 
     const closeModal = () => {
@@ -45,4 +46,11 @@ const DeleteAll = () => {
     )
 }
 
-export default DeleteAll;
+// Sends modalOpen state to the Reducer
+const mapDispatchToProps = dispatch => {
+    return {
+        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(DeleteAll);
