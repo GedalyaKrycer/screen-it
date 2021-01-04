@@ -29,7 +29,7 @@ export function SeeItProvider({ children }) {
     // const [resultEditId, setResultEditId] = useState(null);
 
     // Stores state for the current results when editing
-    const [currentResult, setCurrentResult] = useState(null);
+    // const [currentResult, setCurrentResult] = useState(null);
 
 
 
@@ -54,8 +54,6 @@ export function SeeItProvider({ children }) {
     return (
         <SeeItContext.Provider
             value={{
-                currentResult,
-                setCurrentResult,
                 slideClassIndex,
                 setSlideClassIndex,
                 slideClassControl,

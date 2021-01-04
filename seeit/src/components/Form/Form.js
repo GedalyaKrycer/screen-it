@@ -3,18 +3,12 @@ import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
 import posterUndefined from '../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
-import { useSeeItContext } from '../../utils/SeeItContext';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
 import * as action from '../../store/actions/index';
 
 
 const Form = () => {
-
-    // Imports states from context
-    const {
-        currentResult
-    } = useSeeItContext();
 
 
     // Redux State Hooks
@@ -23,6 +17,7 @@ const Form = () => {
     const rating = useSelector((state) => state.form.rating);
     const resultsArray = useSelector((state) => state.form.resultsArray);
     const resultEditId = useSelector((state) => state.form.resultEditId);
+    const currentResult = useSelector((state) => state.form.currentResult);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();

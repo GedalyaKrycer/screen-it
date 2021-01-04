@@ -7,7 +7,8 @@ export {
     setRatingAmount,
     setRatingHover,
     storeAllResults,
-    storeResultEditId
+    storeResultEditId,
+    storeCurrentResult
 } from './formActionCreator.js';
 
 

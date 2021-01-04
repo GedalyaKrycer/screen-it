@@ -5,7 +5,8 @@ const initialState = {
     rating: null,
     ratingHover: null,
     resultsArray: [],
-    resultEditId: null
+    resultEditId: null,
+    currentResult: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,6 +22,9 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.RESULTS_EDIT_ID:
             return updateObject(state, { resultEditId: action.editId });
+
+        case actionTypes.CURRENT_RESULT:
+            return updateObject(state, { currentResult: action.currentResult });
 
         default:
             return state;
