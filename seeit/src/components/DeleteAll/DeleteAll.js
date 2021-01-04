@@ -1,24 +1,28 @@
 import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 
-const DeleteAll = ({ setModalOpen }) => {
+const DeleteAll = () => {
 
     // Imports states from context
     const {
         setResultsArray,
     } = useSeeItContext();
 
+    // Redux Dispatch Hooks
+    const setModalOpen = useDispatch();
+
+
     const closeModal = () => {
-        setModalOpen(false);
+        setModalOpen(action.toggleModal(false));
     }
 
     const deleteAllItems = () => {
         setResultsArray([]);
-        setModalOpen(false);
+        setModalOpen(action.toggleModal(false));
     }
 
     return (
@@ -46,11 +50,5 @@ const DeleteAll = ({ setModalOpen }) => {
     )
 }
 
-// Sends modalOpen state to the Reducer
-const mapDispatchToProps = dispatch => {
-    return {
-        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle))
-    }
-}
 
-export default connect(null, mapDispatchToProps)(DeleteAll);
+export default DeleteAll;

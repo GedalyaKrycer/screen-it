@@ -5,11 +5,11 @@ import posterUndefined from '../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import axios from 'axios';
-import { connect } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import * as action from '../../store/actions/index';
 
 
-const Form = (props) => {
+const Form = () => {
 
     // Imports states from context
     const {
@@ -21,6 +21,17 @@ const Form = (props) => {
         setResultEditId,
         currentResult
     } = useSeeItContext();
+
+
+    // Redux State Hooks
+    const modalOpen = useSelector((state) => state.modal.modalOpen);
+    const modalIdCheck = useSelector((state) => state.modal.modalIdCheck);
+
+    // Redux Dispatch Hooks
+    const setModalOpen = useDispatch();
+    const setModalIdCheck = useDispatch();
+
+
 
     // State for category field Error
     const [ratingError, setRatingError] = useState(false);
@@ -41,14 +52,12 @@ const Form = (props) => {
 
 
         // Update form values with the current result to be edited
-        if (props.modelIdCheck === "editForm") { 
+        if (modalIdCheck === "editForm") { 
             setMoveName(currentResult.movieName) 
-        }
-        if (props.modelIdCheck === "editForm") { 
             setRating(currentResult.rating) 
         }
         
-    }, [props.modalOpen, currentResult, setRating, props.modelIdCheck])
+    }, [modalOpen, currentResult, setRating, modalIdCheck])
 
 
 
@@ -134,10 +143,10 @@ const Form = (props) => {
                     setResultsArray(resultArrayCopy);
 
                     // Closes modal 
-                    props.setModalOpen(false);
+                    setModalOpen(action.toggleModal(false));
 
                     // Resets modal id
-                    props.setModalIdCheck(null);
+                    setModalIdCheck(action.modalIdChecker(null));
 
                     // Resets the edit id to nothing
                     setResultEditId(null);
@@ -214,18 +223,5 @@ const Form = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        modalOpen: state.modal.modalOpen,
-        modelIdCheck: state.modal.modelIdCheck,
-    }
-}
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
-        setModalIdCheck: (id) => dispatch(action.modalIdChecker(id))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form);
+export default Form;

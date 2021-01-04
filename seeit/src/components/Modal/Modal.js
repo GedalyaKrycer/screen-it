@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as action from '../../store/actions/index'
 
 const Modal = (props) => {
@@ -11,24 +11,34 @@ const Modal = (props) => {
         setResultEditId
     } = useSeeItContext();
 
+
+    // Redux State Hooks
+    const modalOpen = useSelector((state) => state.modal.modalOpen);
+    const modalIdCheck = useSelector((state) => state.modal.modalIdCheck);
+
+
+    // Redux Dispatch Hooks
+    const setModalOpen = useDispatch();
+    const setModalIdCheck = useDispatch();
+
     const handleClose = (e) => {
 
         // Controls event delegation from bubbling
         e.stopPropagation();
 
         // Closes modal
-        props.setModalOpen(false);
+        setModalOpen(action.toggleModal(false));
 
         // Clears Edit ID
         setResultEditId(null);
 
         // Resets modal id
-        props.setModelIdCheck(null)
+        setModalIdCheck(action.modalIdChecker(null))
     }
 
     return (
         <div
-            className={props.modalOpen && props.modelIdCheck === props.modalId ? "modal--show" : "modal--hide"}
+            className={modalOpen && modalIdCheck === props.modalId ? "modal--show" : "modal--hide"}
             onClick={handleClose}
         >
             <div
@@ -45,18 +55,4 @@ const Modal = (props) => {
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        modalOpen: state.modal.modalOpen,
-        modalIdCheck: state.modal.modalIdCheck
-    }
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
-        setModalIdCheck: (id) => dispatch(action.modalIdChecker(id))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default Modal;

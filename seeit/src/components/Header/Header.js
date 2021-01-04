@@ -3,7 +3,7 @@ import './style.css';
 import Logo from "../Logo/Logo";
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ToolIcon from "../ToolIcon/ToolIcon";
-import { connect } from "react-redux";
+import { useDispatch } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 
@@ -16,6 +16,11 @@ const Header = (props) => {
         setViewToggle
     } = useSeeItContext();
 
+
+    // Redux Dispatch Hooks
+    const setModalOpen = useDispatch();
+    const setModalIdCheck = useDispatch();
+
     // State to hold the width of the screen
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -24,10 +29,10 @@ const Header = (props) => {
     const openModal = () => {
 
         // Tells modal to open
-        props.setModalOpen(true);
+        setModalOpen(action.toggleModal(true));
 
         // Verifies which modal should open
-        props.setModalId("headerDeleteAll");
+        setModalIdCheck(action.modalIdChecker("headerDeleteAll"));
     }
 
     // Toggles card/list view
@@ -109,11 +114,4 @@ const Header = (props) => {
     )
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
-        setModalId: (id) => dispatch(action.modalIdChecker(id))
-    }
-}
-
-export default connect(null, mapDispatchToProps)(Header);
+export default Header;

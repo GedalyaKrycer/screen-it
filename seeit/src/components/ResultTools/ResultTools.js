@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ToolIcon from "../ToolIcon/ToolIcon";
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 const ResultTools = (props) => {
@@ -16,6 +16,12 @@ const ResultTools = (props) => {
         slideClassControl,
         setSlideClassControl
     } = useSeeItContext();
+
+
+    // Redux Dispatch Hooks
+    const setModalOpen = useDispatch();
+    const setModalIdCheck = useDispatch();
+
 
     // Deletes movie entry
     const deleteHandler = (index) => {
@@ -46,10 +52,10 @@ const ResultTools = (props) => {
         });
 
         // Tells modal to open
-        props.setModalOpen(true);
+        setModalOpen(action.toggleModal(true));
 
         // Verifies which modal should open
-        props.setModalIdCheck("editForm");
+        setModalIdCheck(action.modalIdChecker("editForm"));
 
         // Closes the result row
         setSlideClassControl(!slideClassControl);
@@ -96,11 +102,4 @@ const ResultTools = (props) => {
     )
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
-        setModalIdCheck: (id) => dispatch(action.modalIdChecker(id))
-    }
-}
-
-export default connect(null, mapDispatchToProps)(ResultTools);
+export default ResultTools;
