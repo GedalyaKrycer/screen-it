@@ -13,8 +13,6 @@ const Form = () => {
 
     // Imports states from context
     const {
-        resultEditId,
-        setResultEditId,
         currentResult
     } = useSeeItContext();
 
@@ -24,12 +22,14 @@ const Form = () => {
     const modalIdCheck = useSelector((state) => state.modal.modalIdCheck);
     const rating = useSelector((state) => state.form.rating);
     const resultsArray = useSelector((state) => state.form.resultsArray);
+    const resultEditId = useSelector((state) => state.form.resultEditId);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
     const setRating = useDispatch();
     const setResultsArray = useDispatch();
+    const setResultEditId = useDispatch();
 
 
 
@@ -149,20 +149,9 @@ const Form = () => {
                     setModalIdCheck(action.modalIdChecker(null));
 
                     // Resets the edit id to nothing
-                    setResultEditId(null);
+                    setResultEditId(action.storeResultEditId(null));
 
                 } else {
-
-                    // Adds all new input values to an array state
-                    // setResultsArray((prevState) => [{
-                    //     movieName,
-                    //     omdbGenre,
-                    //     omdbPoster,
-                    //     posterError,
-                    //     rating,
-                    //     imdbMovieID,
-                    //     id: Math.random() * imdbMovieID.length
-                    // }, ...prevState])
 
                     setResultsArray(action.storeAllResults(
                         [{

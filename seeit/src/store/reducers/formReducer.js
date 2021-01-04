@@ -4,7 +4,8 @@ import { updateObject } from '../updateObject';
 const initialState = {
     rating: null,
     ratingHover: null,
-    resultsArray: []
+    resultsArray: [],
+    resultEditId: null
 }
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,9 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.RESULTS_ARRAY:
             return updateObject(state, { resultsArray: action.results });
+
+        case actionTypes.RESULTS_EDIT_ID:
+            return updateObject(state, { resultEditId: action.editId });
 
         default:
             return state;

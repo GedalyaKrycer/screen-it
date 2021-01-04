@@ -24,3 +24,11 @@ export const storeAllResults = (formInput) => {
     }
 };
 
+// Captures the id of the movie being edited
+export const storeResultEditId = (resultId) => {
+    return {
+        type: actionTypes.RESULTS_EDIT_ID,
+        editId: resultId
+    }
+};
+

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 
 const SeeItContext = React.createContext();
 
@@ -26,7 +26,7 @@ export function SeeItProvider({ children }) {
     // const [resultsArray, setResultsArray] = useState([]);
 
     // Stores state for the id of a result object that is being edited
-    const [resultEditId, setResultEditId] = useState(null);
+    // const [resultEditId, setResultEditId] = useState(null);
 
     // Stores state for the current results when editing
     const [currentResult, setCurrentResult] = useState(null);
@@ -51,30 +51,9 @@ export function SeeItProvider({ children }) {
     const [viewToggle, setViewToggle] = useState("list");
 
 
-    // // Pulls resultsArray from local storage
-    // useEffect(() => {
-
-    //     const localData = localStorage.getItem('results');
-
-    //     if (localData) {
-    //         setResultsArray(JSON.parse(localData))
-    //     }
-
-    // }, [])
-
-
-    // // Saves resultsArray to local storage
-    // useEffect(() => {
-    //     localStorage.setItem('results', JSON.stringify(resultsArray));
-
-    // }, [resultsArray])
-
-
     return (
         <SeeItContext.Provider
             value={{
-                resultEditId,
-                setResultEditId,
                 currentResult,
                 setCurrentResult,
                 slideClassIndex,

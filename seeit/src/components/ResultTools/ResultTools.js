@@ -9,7 +9,6 @@ const ResultTools = (props) => {
 
     // Imports states from context
     const {
-        setResultEditId,
         setCurrentResult,
         slideClassControl,
         setSlideClassControl
@@ -22,6 +21,7 @@ const ResultTools = (props) => {
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
     const setResultsArray = useDispatch();
+    const setResultEditId = useDispatch();
 
 
     // Deletes movie entry
@@ -44,7 +44,7 @@ const ResultTools = (props) => {
     const editHandler = () => {
 
         // Passes this results id to form
-        setResultEditId(props.result.id);
+        setResultEditId(action.storeResultEditId(props.result.id));
 
         // Passes this result to form value
         setCurrentResult({
