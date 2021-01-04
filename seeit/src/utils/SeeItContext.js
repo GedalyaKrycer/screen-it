@@ -9,8 +9,18 @@ export const useSeeItContext = () => {
 
 export function SeeItProvider({ children }) {
 
+
+    // State that controls if modal should open/close
+    // const [modalOpen, setModalOpen] = useState(false);
+
+    // State that caputures the id of the modal
+    // const [modelIdCheck, setModelIdCheck] = useState(false);
+
     // Stores state for the star rating
     // const [rating, setRating] = useState(null);
+
+    // Stores state for the star rating hovering
+    // const [starHover, setStarHover] = useState(null);
 
     // State for Results Data
     const [resultsArray, setResultsArray] = useState([]);
@@ -21,15 +31,9 @@ export function SeeItProvider({ children }) {
     // Stores state for the current results when editing
     const [currentResult, setCurrentResult] = useState(null);
 
-    // Stores state for the star rating hovering
-    const [starHover, setStarHover] = useState(null);
 
 
-    // // State that controls if modal should open/close
-    // const [modalOpen, setModalOpen] = useState(false);
 
-    // // State that caputures the id of the modal
-    // const [modelIdCheck, setModelIdCheck] = useState(false);
 
     // State that controls if the result row should slide over or not
     const [slideClassControl, setSlideClassControl] = useState(false);
@@ -69,8 +73,6 @@ export function SeeItProvider({ children }) {
     return (
         <SeeItContext.Provider
             value={{
-                starHover,
-                setStarHover,
                 resultsArray,
                 setResultsArray,
                 resultEditId,
