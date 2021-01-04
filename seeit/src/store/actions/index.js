@@ -1,4 +1,1 @@
-export {
-    toggleModal,
-    setModalId
-} from './modalActionCreator.js';
+export { toggleModal, modalIdChecker } from './modalActionCreator.js';

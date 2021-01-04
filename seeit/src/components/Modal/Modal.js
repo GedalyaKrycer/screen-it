@@ -2,14 +2,12 @@ import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
+import { connect } from 'react-redux';
+import * as action from '../../store/actions/index'
 
-const Modal = ({ children, modalId }) => {
+const Modal = (props) => {
     // Imports states from context
     const {
-        modalOpen,
-        setModalOpen,
-        modelIdCheck,
-        setModelIdCheck,
         setResultEditId
     } = useSeeItContext();
 
@@ -19,18 +17,18 @@ const Modal = ({ children, modalId }) => {
         e.stopPropagation();
 
         // Closes modal
-        setModalOpen(false);
+        props.setModalOpen(false);
 
         // Clears Edit ID
         setResultEditId(null);
 
         // Resets modal id
-        setModelIdCheck(null)
+        props.setModelIdCheck(null)
     }
 
     return (
         <div
-            className={modalOpen && modelIdCheck === modalId ? "modal--show" : "modal--hide"}
+            className={props.modalOpen && props.modelIdCheck === props.modalId ? "modal--show" : "modal--hide"}
             onClick={handleClose}
         >
             <div
@@ -41,10 +39,24 @@ const Modal = ({ children, modalId }) => {
                     className="modal__close"
                     onClick={handleClose}
                 ><FaPlus /></span>
-                {children}
+                {props.children}
             </div>
         </div>
     )
 }
 
-export default Modal;
+const mapStateToProps = state => {
+    return {
+        modalOpen: state.modal.modalOpen,
+        modalIdCheck: state.modal.modalIdCheck
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
+        setModalIdCheck: (id) => dispatch(action.modalIdChecker(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

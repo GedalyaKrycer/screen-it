@@ -137,7 +137,7 @@ const Form = (props) => {
                     props.setModalOpen(false);
 
                     // Resets modal id
-                    props.setModelId(null);
+                    props.setModalIdCheck(null);
 
                     // Resets the edit id to nothing
                     setResultEditId(null);
@@ -224,7 +224,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
-        setModelId: (id) => dispatch(action.setModalId(id))
+        setModalIdCheck: (id) => dispatch(action.modalIdChecker(id))
     }
 }
 

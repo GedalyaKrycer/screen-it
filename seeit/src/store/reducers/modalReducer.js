@@ -3,7 +3,7 @@ import { updateObject } from '../updateObject';
 
 const initialState = {
     modalOpen: false,
-    modalIdCheck: false,
+    modalIdCheck: null,
 }
 
 const reducer = (state = initialState, action) => {
