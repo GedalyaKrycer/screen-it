@@ -5,9 +5,11 @@ import posterUndefined from '../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import axios from 'axios';
+import { connect } from "react-redux";
+import * as action from '../../store/actions/index';
 
 
-const Form = () => {
+const Form = (props) => {
 
     // Imports states from context
     const {
@@ -17,10 +19,6 @@ const Form = () => {
         resultsArray,
         resultEditId,
         setResultEditId,
-        setModalOpen,
-        modalOpen,
-        modelIdCheck,
-        setModelIdCheck,
         currentResult
     } = useSeeItContext();
 
@@ -43,14 +41,14 @@ const Form = () => {
 
 
         // Update form values with the current result to be edited
-        if (modelIdCheck === "editForm") { 
+        if (props.modelIdCheck === "editForm") { 
             setMoveName(currentResult.movieName) 
         }
-        if (modelIdCheck === "editForm") { 
+        if (props.modelIdCheck === "editForm") { 
             setRating(currentResult.rating) 
         }
         
-    }, [modalOpen, currentResult, setRating, modelIdCheck])
+    }, [props.modalOpen, currentResult, setRating, props.modelIdCheck])
 
 
 
@@ -136,10 +134,10 @@ const Form = () => {
                     setResultsArray(resultArrayCopy);
 
                     // Closes modal 
-                    setModalOpen(false);
+                    props.setModalOpen(false);
 
                     // Resets modal id
-                    setModelIdCheck(null)
+                    props.setModelId(null);
 
                     // Resets the edit id to nothing
                     setResultEditId(null);
@@ -216,4 +214,18 @@ const Form = () => {
     )
 }
 
-export default Form;
+const mapStateToProps = state => {
+    return {
+        modalOpen: state.modal.modalOpen,
+        modelIdCheck: state.modal.modelIdCheck,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setModalOpen: (toggle) => dispatch(action.toggleModal(toggle)),
+        setModelId: (id) => dispatch(action.setModalId(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);

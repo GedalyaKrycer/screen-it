@@ -11,6 +11,8 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.MODAL_OPEN:
             return updateObject(state, { modalOpen: action.openModal });
+        case actionTypes.MODAL_ID:
+            return updateObject(state, { modalIdCheck: action.modalId });
         default:
             return state;
     }

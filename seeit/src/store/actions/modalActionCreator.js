@@ -7,3 +7,11 @@ export const toggleModal = (toggle) => {
         openModal: toggle
     }
 }
+
+// Handles if the modal is open or closed 
+export const setModalId = (id) => {
+    return {
+        type: actionTypes.MODAL_ID,
+        modalId: id
+    }
+}
