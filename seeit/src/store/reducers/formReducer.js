@@ -3,7 +3,8 @@ import { updateObject } from '../updateObject';
 
 const initialState = {
     rating: null,
-    ratingHover: null
+    ratingHover: null,
+    resultsArray: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -13,6 +14,9 @@ const reducer = (state = initialState, action) => {
 
         case actionTypes.RATING_HOVER:
             return updateObject(state, { ratingHover: action.hoverCount });
+
+        case actionTypes.RESULTS_ARRAY:
+            return updateObject(state, { resultsArray: action.results });
 
         default:
             return state;

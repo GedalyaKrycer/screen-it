@@ -4,18 +4,22 @@ import RatingStars from '../RatingStars/RatingStars';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ResultTools from "../ResultTools/ResultTools";
 import NameGenre from "../NameGenre/NameGenre";
+import { useSelector } from "react-redux";
 
 
 const ResultCards = () => {
     // Imports states from context
     const {
-        resultsArray,
         cardClassIndex,
         setCardClassIndex,
         cardClassControl,
         setCardClassControl,
         viewToggle
     } = useSeeItContext();
+
+
+    // Redux State Hooks
+    const resultsArray = useSelector((state) => state.form.resultsArray);
 
     if (viewToggle === 'cards') {
 

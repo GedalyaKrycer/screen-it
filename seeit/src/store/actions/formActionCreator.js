@@ -16,3 +16,11 @@ export const setRatingHover = (hoverInput) => {
     }
 };
 
+// Captures all results 
+export const storeAllResults = (formInput) => {
+    return {
+        type: actionTypes.RESULTS_ARRAY,
+        results: formInput
+    }
+};
+

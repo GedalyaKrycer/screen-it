@@ -3,7 +3,7 @@ import './style.css';
 import Logo from "../Logo/Logo";
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ToolIcon from "../ToolIcon/ToolIcon";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 
@@ -11,7 +11,6 @@ const Header = (props) => {
 
     // Imports states from context
     const {
-        resultsArray,
         viewToggle,
         setViewToggle
     } = useSeeItContext();
@@ -20,6 +19,10 @@ const Header = (props) => {
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
+
+    // Redux State Hooks 
+    const resultsArray = useSelector((state) => state.form.resultsArray);
+
 
     // State to hold the width of the screen
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);

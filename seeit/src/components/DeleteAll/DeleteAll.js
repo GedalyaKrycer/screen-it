@@ -1,19 +1,14 @@
 import React from 'react';
 import './style.css';
-import { useSeeItContext } from '../../utils/SeeItContext';
 import { useDispatch } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 
 const DeleteAll = () => {
 
-    // Imports states from context
-    const {
-        setResultsArray,
-    } = useSeeItContext();
-
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
+    const setResultsArray = useDispatch();
 
 
     const closeModal = () => {
@@ -21,7 +16,7 @@ const DeleteAll = () => {
     }
 
     const deleteAllItems = () => {
-        setResultsArray([]);
+        setResultsArray(action.storeAllResults([]));
         setModalOpen(action.toggleModal(false));
     }
 

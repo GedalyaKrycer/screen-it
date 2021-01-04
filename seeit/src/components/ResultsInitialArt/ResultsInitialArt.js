@@ -1,12 +1,13 @@
 import React from 'react';
 import './style.css';
 import resultArt from "../../img/background-mobile.svg";
-import { useSeeItContext } from '../../utils/SeeItContext';
+import { useSelector } from "react-redux";
 
 const ResultsInitialArt = () => {
 
-    // Imports states from context
-    const { resultsArray } = useSeeItContext();
+    // Redux State Hooks
+    const resultsArray = useSelector((state) => state.form.resultsArray);
+
 
     if (resultsArray.length === 0) {
         return (

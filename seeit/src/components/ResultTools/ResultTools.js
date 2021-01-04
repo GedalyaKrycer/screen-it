@@ -2,25 +2,26 @@ import React from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ToolIcon from "../ToolIcon/ToolIcon";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 const ResultTools = (props) => {
 
     // Imports states from context
     const {
-        resultsArray,
-        setResultsArray,
         setResultEditId,
         setCurrentResult,
         slideClassControl,
         setSlideClassControl
     } = useSeeItContext();
 
+    // Redux State Hooks
+    const resultsArray = useSelector((state) => state.form.resultsArray);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
+    const setResultsArray = useDispatch();
 
 
     // Deletes movie entry
@@ -33,7 +34,7 @@ const ResultTools = (props) => {
         resultsArrayCopy.splice(index, 1);
 
         // Sets the new array to state
-        setResultsArray(resultsArrayCopy);
+        setResultsArray(action.storeAllResults(resultsArrayCopy));
 
         setSlideClassControl(false);
 

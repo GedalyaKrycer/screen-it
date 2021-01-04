@@ -6,18 +6,21 @@ import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
 import Avatar from "../Avatar/Avatar";
 import NameGenre from "../NameGenre/NameGenre";
+import { useSelector } from "react-redux";
 
 
 const ResultRow = () => {
     // Imports states from context
     const {
-        resultsArray,
         slideClassIndex,
         setSlideClassIndex,
         slideClassControl,
         setSlideClassControl,
         viewToggle
     } = useSeeItContext();
+
+    // Redux State Hooks
+    const resultsArray = useSelector((state) => state.form.resultsArray);
 
 
     if (viewToggle === 'list') {

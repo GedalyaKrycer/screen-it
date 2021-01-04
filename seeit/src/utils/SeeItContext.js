@@ -23,7 +23,7 @@ export function SeeItProvider({ children }) {
     // const [starHover, setStarHover] = useState(null);
 
     // State for Results Data
-    const [resultsArray, setResultsArray] = useState([]);
+    // const [resultsArray, setResultsArray] = useState([]);
 
     // Stores state for the id of a result object that is being edited
     const [resultEditId, setResultEditId] = useState(null);
@@ -51,30 +51,28 @@ export function SeeItProvider({ children }) {
     const [viewToggle, setViewToggle] = useState("list");
 
 
-    // Pulls resultsArray from local storage
-    useEffect(() => {
+    // // Pulls resultsArray from local storage
+    // useEffect(() => {
 
-        const localData = localStorage.getItem('results');
+    //     const localData = localStorage.getItem('results');
 
-        if (localData) {
-            setResultsArray(JSON.parse(localData))
-        }
+    //     if (localData) {
+    //         setResultsArray(JSON.parse(localData))
+    //     }
 
-    }, [])
+    // }, [])
 
 
-    // Saves resultsArray to local storage
-    useEffect(() => {
-        localStorage.setItem('results', JSON.stringify(resultsArray));
+    // // Saves resultsArray to local storage
+    // useEffect(() => {
+    //     localStorage.setItem('results', JSON.stringify(resultsArray));
 
-    }, [resultsArray])
+    // }, [resultsArray])
 
 
     return (
         <SeeItContext.Provider
             value={{
-                resultsArray,
-                setResultsArray,
                 resultEditId,
                 setResultEditId,
                 currentResult,

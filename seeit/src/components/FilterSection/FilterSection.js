@@ -1,14 +1,14 @@
 import React from 'react';
 import './style.css';
 import resultArtDesktop from "../../img/background-desktop.svg";
-import { useSeeItContext } from '../../utils/SeeItContext';
+import { useSelector } from 'react-redux';
 
 
 
 const FilterSection = ({ children }) => {
 
-    // Imports states from context
-    const { resultsArray } = useSeeItContext();
+    // React State Hook
+    const resultsArray = useSelector((state) => state.form.resultsArray);
 
     if (resultsArray.length === 0) {
         return (

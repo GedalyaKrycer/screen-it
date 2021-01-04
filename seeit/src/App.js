@@ -11,6 +11,9 @@ import ResultsBody from './components/ResultsBody/ResultsBody';
 import ResultsInitialArt from './components/ResultsInitialArt/ResultsInitialArt';
 import { SeeItProvider } from './utils/SeeItContext';
 
+
+
+
 function App() {
   return (
     <SeeItProvider>

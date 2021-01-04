@@ -13,8 +13,6 @@ const Form = () => {
 
     // Imports states from context
     const {
-        setResultsArray,
-        resultsArray,
         resultEditId,
         setResultEditId,
         currentResult
@@ -25,11 +23,13 @@ const Form = () => {
     const modalOpen = useSelector((state) => state.modal.modalOpen);
     const modalIdCheck = useSelector((state) => state.modal.modalIdCheck);
     const rating = useSelector((state) => state.form.rating);
+    const resultsArray = useSelector((state) => state.form.resultsArray);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
     const setRating = useDispatch();
+    const setResultsArray = useDispatch();
 
 
 
@@ -140,7 +140,7 @@ const Form = () => {
                     }
 
                     // Updates the array with the new info
-                    setResultsArray(resultArrayCopy);
+                    setResultsArray(action.storeAllResults(resultArrayCopy));
 
                     // Closes modal 
                     setModalOpen(action.toggleModal(false));
@@ -154,15 +154,27 @@ const Form = () => {
                 } else {
 
                     // Adds all new input values to an array state
-                    setResultsArray((prevState) => [{
-                        movieName,
-                        omdbGenre,
-                        omdbPoster,
-                        posterError,
-                        rating,
-                        imdbMovieID,
-                        id: Math.random() * imdbMovieID.length
-                    }, ...prevState])
+                    // setResultsArray((prevState) => [{
+                    //     movieName,
+                    //     omdbGenre,
+                    //     omdbPoster,
+                    //     posterError,
+                    //     rating,
+                    //     imdbMovieID,
+                    //     id: Math.random() * imdbMovieID.length
+                    // }, ...prevState])
+
+                    setResultsArray(action.storeAllResults(
+                        [{
+                            movieName,
+                            omdbGenre,
+                            omdbPoster,
+                            posterError,
+                            rating,
+                            imdbMovieID,
+                            id: Math.random() * imdbMovieID.length
+                        }, ...resultsArray]
+                    ))
                 }
 
 
