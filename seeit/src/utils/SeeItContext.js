@@ -10,10 +10,7 @@ export const useSeeItContext = () => {
 export function SeeItProvider({ children }) {
 
     // Stores state for the star rating
-    const [rating, setRating] = useState(null);
-
-    // Stores state for the star rating hovering
-    const [starHover, setStarHover] = useState(null);
+    // const [rating, setRating] = useState(null);
 
     // State for Results Data
     const [resultsArray, setResultsArray] = useState([]);
@@ -23,6 +20,10 @@ export function SeeItProvider({ children }) {
 
     // Stores state for the current results when editing
     const [currentResult, setCurrentResult] = useState(null);
+
+    // Stores state for the star rating hovering
+    const [starHover, setStarHover] = useState(null);
+
 
     // // State that controls if modal should open/close
     // const [modalOpen, setModalOpen] = useState(false);
@@ -68,8 +69,6 @@ export function SeeItProvider({ children }) {
     return (
         <SeeItContext.Provider
             value={{
-                rating,
-                setRating,
                 starHover,
                 setStarHover,
                 resultsArray,

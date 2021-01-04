@@ -13,8 +13,6 @@ const Form = () => {
 
     // Imports states from context
     const {
-        rating,
-        setRating,
         setResultsArray,
         resultsArray,
         resultEditId,
@@ -26,10 +24,12 @@ const Form = () => {
     // Redux State Hooks
     const modalOpen = useSelector((state) => state.modal.modalOpen);
     const modalIdCheck = useSelector((state) => state.modal.modalIdCheck);
+    const rating = useSelector((state) => state.form.rating);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
     const setModalIdCheck = useDispatch();
+    const setRating = useDispatch();
 
 
 
@@ -48,13 +48,13 @@ const Form = () => {
 
         // Every time use effect runs clear values
         setMoveName('');
-        setRating(null);
+        setRating(action.setRatingAmount(null));
 
 
         // Update form values with the current result to be edited
         if (modalIdCheck === "editForm") { 
             setMoveName(currentResult.movieName) 
-            setRating(currentResult.rating) 
+            setRating(action.setRatingAmount(currentResult.rating)) 
         }
         
     }, [modalOpen, currentResult, setRating, modalIdCheck])
@@ -173,7 +173,7 @@ const Form = () => {
 
         // Resets all input values
         setMoveName('');
-        setRating('');
+        setRating(action.setRatingAmount(''));
     };
 
 

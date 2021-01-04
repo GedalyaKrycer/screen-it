@@ -3,7 +3,7 @@ import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux';
-import * as action from '../../store/actions/index'
+import * as action from '../../store/actions/index';
 
 const Modal = (props) => {
     // Imports states from context

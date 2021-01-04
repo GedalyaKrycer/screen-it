@@ -2,11 +2,21 @@ import React, { useRef } from 'react';
 import './style.css';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import { TweenMax, Power3 } from 'gsap';
+import { useSelector, useDispatch } from 'react-redux';
+import * as action from '../../store/actions/index';
 
 const RatingStars = ({ disableClick, stateValues }) => {
 
     // Imports states from context
-    const { rating, setRating, starHover, setStarHover } = useSeeItContext();
+    const { starHover, setStarHover } = useSeeItContext();
+
+
+    // Redux State Hooks
+    const rating = useSelector((state) => state.form.rating);
+
+    // Redux Dispatch Hooks
+    const setRating = useDispatch();
+
 
     // Ref that holds star's parent div
     let starRef = useRef();
@@ -27,7 +37,7 @@ const RatingStars = ({ disableClick, stateValues }) => {
                 const starClick = () => {
 
                     // Sets the global raiting state the current star's value
-                    setRating(ratingValue);
+                    setRating(action.setRatingAmount(ratingValue));
 
                     // If the 5th star is selected, the animation runs on all 5 stars.
                     if (ratingValue === 5) {
