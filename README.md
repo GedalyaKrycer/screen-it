@@ -11,6 +11,18 @@ https://seeit.netlify.app/
 **Figma Link:** 
 https://www.figma.com/file/54b1hamTwUweFUhBcpyKfP/See-It-Updates?node-id=113%3A1
 
+---
+## Version 4
+*These items were added after the initial 24 hour deadline.* 
+
+#### Key Features 
+
+* Changed global storage from a Context Hook provider to a React-Redux store
+    * Multiple Reducers and Action Creators were used to modularize state tasks 
+    * `useSelector` and `useDispatch` hooks were used within functional components 
+    * The Redux Devtools Extension was added for better troubleshooting in Google Chrome Dev Tools 
+* Re-Organized components into logical sections for quick searching as the project grows in complexity  
+* MISC code refactoring and ui tweaks. 
 
 ---
 ## Version 3
