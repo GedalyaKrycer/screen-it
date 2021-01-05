@@ -1,0 +1,194 @@
+/* ————————————————————————————————————————————————
+Table Of Contents
+
+1. Main Code 
+2. Breakpoints 
+
+———————————————————————————————————————————————— */
+
+
+
+/* ————————————————————————————————————————————————
+1. Main Code
+———————————————————————————————————————————————— */
+
+.result-cards {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, minmax(270px, 1fr));
+    max-width: 700px;
+    margin: 40px auto 50px;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+.result-cards__frame {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 14px;
+    border: 1px solid var(--grey4);
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    max-width: 270px;
+    opacity: 0;
+    --delay: 0;
+    -webkit-animation: CARD-ANIMATE-IN 0.5s calc(0.25s * var(--delay)) forwards ease-in-out; /* Safari 4+ */
+    -moz-animation:    CARD-ANIMATE-IN 0.5s calc(0.25s * var(--delay)) forwards ease-in-out; /* Fx 5+ */
+    -o-animation:      CARD-ANIMATE-IN 0.5s calc(0.25s * var(--delay)) forwards ease-in-out; /* Opera 12+ */
+    animation:         CARD-ANIMATE-IN 0.5s calc(0.25s * var(--delay)) forwards ease-in-out; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes CARD-ANIMATE-IN {
+    0%   { 
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @-moz-keyframes CARD-ANIMATE-IN {
+    0%   { 
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @-o-keyframes CARD-ANIMATE-IN {
+    0%   { 
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+  @keyframes CARD-ANIMATE-IN {
+    0%   { 
+        opacity: 0;
+        transform: translateY(-20px); 
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0); 
+    }
+  }
+
+
+.result-cards__poster {
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 250px;
+    transition: .3s ease-in-out;
+    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    
+}
+
+.result-cards__frame:hover .result-cards__poster {
+    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0);
+    -o-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0);
+    opacity: .8;
+}
+
+.result-cards__info {
+    display: grid;
+}
+
+.result-cards__info .ratings {
+    justify-self: center;
+}
+
+.result-cards__info--show,
+.result-cards__tools--show {
+    position: static;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: .3s ease-in-out ;
+}
+
+
+.result-cards__info--hide,
+.result-cards__tools--hide
+ {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out ;
+}
+
+.result-cards__info--hide {
+    transform: translateY(-10px);
+}
+
+.result-cards__tools--hide {
+    transform: translateY(10px);
+}
+
+.result-cards__info .result-tools {
+    grid-gap: 6px;
+    margin: auto;
+
+}
+
+
+/* ————————————————————————————————————————————————
+2. Breakpoints 
+———————————————————————————————————————————————— */
+
+@media screen and (min-width: 700px) {
+    
+    .result-cards {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        max-width: 1400px;
+    }
+
+    .result-cards__frame {
+
+        margin-bottom: 20px;
+    }
+
+}
+
+@media screen and (min-width: 601px) {
+
+    .result-cards__info .ratings {
+        justify-self: center;
+    }
+    
+
+}
+
+@media screen and (max-width: 600px) {
+    .result-cards {
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: 1fr;
+        margin: 40px auto 0;
+        justify-items: center;
+    
+    }
+    
+}
+
+
+@media screen and (max-width: 375px) {
+ 
+}
+

@@ -1,0 +1,45 @@
+/* ————————————————————————————————————————————————
+Table Of Contents
+
+1. Main Code 
+2. Breakpoints 
+
+———————————————————————————————————————————————— */
+
+
+
+/* ————————————————————————————————————————————————
+1. Main Code
+———————————————————————————————————————————————— */
+header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--grey3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__btn {
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all ease .3s;
+    outline: none;
+}
+
+
+
+/* ————————————————————————————————————————————————
+2. Breakpoints 
+———————————————————————————————————————————————— */
+@media screen and (max-width: 375px) {
+    header {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}
+
