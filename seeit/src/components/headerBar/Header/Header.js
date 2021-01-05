@@ -43,11 +43,11 @@ const Header = () => {
     // Use Effect to toggle view based on window size
     useEffect(() => {
 
-        if (windowWidth > 699) {
+        if (windowWidth > 699 && resultsArray.length > 0) {
             setResultsView(action.setResultsView('cards'));
         }
 
-    }, [windowWidth, setResultsView])
+    }, [windowWidth, setResultsView, resultsArray])
 
 
     // Opens delete modal
