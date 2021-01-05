@@ -6,7 +6,7 @@ const initialState = {
     rowClassControl: null,
     cardIndex: false,
     cardClassControl: null,
-    viewType: "list"
+    resultsViewType: "list"
 }
 
 const reducer = (state = initialState, action) => {
@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
             return updateObject(state, { cardClassControl: action.cardControl });
 
         case actionTypes.RESULT_VIEW_TOGGLE:
-            return updateObject(state, { viewType: action.viewToggle });
+            return updateObject(state, { resultsViewType: action.viewToggle });
 
 
         default:

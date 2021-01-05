@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
-import { useSeeItContext } from '../../utils/SeeItContext';
 import ResultTools from "../ResultTools/ResultTools";
 import NameGenre from "../NameGenre/NameGenre";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,23 +8,20 @@ import * as action from '../../store/actions/index';
 
 
 const ResultCards = () => {
-    // Imports states from context
-    const {
-        viewToggle
-    } = useSeeItContext();
-
 
     // Redux State Hooks
     const resultsArray = useSelector((state) => state.form.resultsArray);
     const cardClassControl = useSelector((state) => state.results.cardClassControl);
     const cardIndex = useSelector((state) => state.results.cardIndex);
+    const resultsViewType = useSelector((state) => state.results.resultsViewType);
+
 
     // Redux Dispatch Hooks
     const setCardClassControl = useDispatch();
     const setCardIndex = useDispatch();
 
 
-    if (viewToggle === 'cards') {
+    if (resultsViewType === 'cards') {
 
         return (
             <section className="result-cards">

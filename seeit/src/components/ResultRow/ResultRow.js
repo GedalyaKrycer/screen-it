@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.css';
 import RatingStars from '../RatingStars/RatingStars';
-import { useSeeItContext } from '../../utils/SeeItContext';
 import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
 import Avatar from "../Avatar/Avatar";
@@ -11,22 +10,19 @@ import * as action from '../../store/actions/index';
 
 
 const ResultRow = () => {
-    // Imports states from context
-    const {
-        viewToggle
-    } = useSeeItContext();
 
     // Redux State Hooks
     const resultsArray = useSelector((state) => state.form.resultsArray);
     const rowClassControl = useSelector((state) => state.results.rowClassControl);
     const rowIndex = useSelector((state) => state.results.rowIndex);
+    const resultsViewType = useSelector((state) => state.results.resultsViewType);
 
     // Redux Dispatch Hooks
     const setRowClassControl = useDispatch();
     const setRowIndex = useDispatch();
 
 
-    if (viewToggle === 'list') {
+    if (resultsViewType === 'list') {
         return (
             <>
                 <div className="results__overflow">

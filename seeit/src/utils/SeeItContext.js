@@ -48,14 +48,13 @@ export function SeeItProvider({ children }) {
     // const [cardClassIndex, setCardClassIndex] = useState(null);
 
     // State that stores the index of the card element clicked
-    const [viewToggle, setViewToggle] = useState("list");
+    // const [viewToggle, setViewToggle] = useState("list");
 
 
     return (
         <SeeItContext.Provider
             value={{
-                viewToggle,
-                setViewToggle
+
             }}
         >
             {children}
