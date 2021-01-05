@@ -1,42 +1,48 @@
 import * as actionTypes from './actionTypes';
 
-// Captures how much the rating is 
-export const setRatingAmount = (rating) => {
+// Captures which row was clicked
+export const setRowIndex = (index) => {
     return {
-        type: actionTypes.RATING_AMOUNT,
-        currentRating: rating
+        type: actionTypes.ROW_INDEX,
+        rowIndex: index
     }
 };
 
-// Captures how much the rating is 
-export const setRatingHover = (hoverInput) => {
+// Confirms if the css class should be changed
+export const setRowControl = (toggleCSS) => {
     return {
-        type: actionTypes.RATING_HOVER,
-        hoverCount: hoverInput
+        type: actionTypes.ROW_CLASS_CONTROL,
+        rowControl: toggleCSS
     }
 };
 
-// Captures all results 
-export const storeAllResults = (formInput) => {
+// Captures which row was clicked
+export const setCardIndex = (index) => {
     return {
-        type: actionTypes.RESULTS_ARRAY,
-        results: formInput
+        type: actionTypes.CARD_INDEX,
+        cardIndex: index
     }
 };
 
-// Captures the id of the movie being edited
-export const storeResultEditId = (resultId) => {
+// Confirms if the css class should be changed
+export const setCardControl = (toggleCSS) => {
     return {
-        type: actionTypes.RESULTS_EDIT_ID,
-        editId: resultId
+        type: actionTypes.CARD_CLASS_CONTROL,
+        cardControl: toggleCSS
     }
 };
 
-// Stores the result of the movie being edited currently 
-export const storeCurrentResult = (movieData) => {
+// Changes the results from list to card view
+export const setResultsView = (view) => {
     return {
-        type: actionTypes.CURRENT_RESULT,
-        currentResult: movieData
+        type: actionTypes.RESULT_VIEW_TOGGLE,
+        viewToggle: view
     }
 };
+
+
+
+
+
+
 

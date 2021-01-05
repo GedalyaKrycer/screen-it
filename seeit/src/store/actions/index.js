@@ -12,4 +12,10 @@ export {
 } from './formActionCreator.js';
 
 
-// export { } from './resultsActionCreator.js';
+export {
+    setRowIndex,
+    setRowControl,
+    setCardIndex,
+    setCardControl,
+    setResultsView
+} from './resultsActionCreator.js';

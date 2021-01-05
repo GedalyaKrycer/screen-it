@@ -4,22 +4,26 @@ import RatingStars from '../RatingStars/RatingStars';
 import { useSeeItContext } from '../../utils/SeeItContext';
 import ResultTools from "../ResultTools/ResultTools";
 import NameGenre from "../NameGenre/NameGenre";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import * as action from '../../store/actions/index';
 
 
 const ResultCards = () => {
     // Imports states from context
     const {
-        cardClassIndex,
-        setCardClassIndex,
-        cardClassControl,
-        setCardClassControl,
         viewToggle
     } = useSeeItContext();
 
 
     // Redux State Hooks
     const resultsArray = useSelector((state) => state.form.resultsArray);
+    const cardClassControl = useSelector((state) => state.results.cardClassControl);
+    const cardIndex = useSelector((state) => state.results.cardIndex);
+
+    // Redux Dispatch Hooks
+    const setCardClassControl = useDispatch();
+    const setCardIndex = useDispatch();
+
 
     if (viewToggle === 'cards') {
 
@@ -32,10 +36,10 @@ const ResultCards = () => {
                         const cardItemHandle = (index) => {
 
                             // Sets the index to the element
-                            setCardClassIndex(index)
+                            setCardIndex(action.setCardIndex(index))
 
                             // Sets the state that controls the slide class to true/false
-                            setCardClassControl(!cardClassControl)
+                            setCardClassControl(action.setCardControl(!cardClassControl))
                         }
 
 
@@ -55,7 +59,7 @@ const ResultCards = () => {
 
 
                                 <div
-                                    className={`result-cards__info ${cardClassIndex === index && cardClassControl ? 'result-cards__info--hide' : 'result-cards__info--show'}`}>
+                                    className={`result-cards__info ${cardIndex === index && cardClassControl ? 'result-cards__info--hide' : 'result-cards__info--show'}`}>
                                     <RatingStars
                                         disableClick={true}
                                         stateValues={result.rating}
@@ -67,7 +71,7 @@ const ResultCards = () => {
                                     />
                                 </div>
                                 <div
-                                    className={`result-cards__info ${cardClassIndex === index && cardClassControl ? 'result-cards__tools--show' : 'result-cards__tools--hide'}`}>
+                                    className={`result-cards__info ${cardIndex === index && cardClassControl ? 'result-cards__tools--show' : 'result-cards__tools--hide'}`}>
                                     <ResultTools
                                         iconClassPrimary={"tool-icon--stroke-primary"}
                                         iconClassWarning={"tool-icon--stroke-warning "}

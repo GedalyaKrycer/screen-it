@@ -36,16 +36,16 @@ export function SeeItProvider({ children }) {
 
 
     // State that controls if the result row should slide over or not
-    const [slideClassControl, setSlideClassControl] = useState(false);
+    // const [slideClassControl, setSlideClassControl] = useState(false);
 
     // State that stores the index of the element clicked
-    const [slideClassIndex, setSlideClassIndex] = useState(null);
+    // const [slideClassIndex, setSlideClassIndex] = useState(null);
 
     // State that controls if the result card should show tools or not
-    const [cardClassControl, setCardClassControl] = useState(false);
+    // const [cardClassControl, setCardClassControl] = useState(false);
 
     // State that stores the index of the card element clicked
-    const [cardClassIndex, setCardClassIndex] = useState(null);
+    // const [cardClassIndex, setCardClassIndex] = useState(null);
 
     // State that stores the index of the card element clicked
     const [viewToggle, setViewToggle] = useState("list");
@@ -54,14 +54,6 @@ export function SeeItProvider({ children }) {
     return (
         <SeeItContext.Provider
             value={{
-                slideClassIndex,
-                setSlideClassIndex,
-                slideClassControl,
-                setSlideClassControl,
-                cardClassIndex,
-                setCardClassIndex,
-                cardClassControl,
-                setCardClassControl,
                 viewToggle,
                 setViewToggle
             }}

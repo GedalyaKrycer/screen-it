@@ -6,21 +6,24 @@ import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
 import Avatar from "../Avatar/Avatar";
 import NameGenre from "../NameGenre/NameGenre";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import * as action from '../../store/actions/index';
 
 
 const ResultRow = () => {
     // Imports states from context
     const {
-        slideClassIndex,
-        setSlideClassIndex,
-        slideClassControl,
-        setSlideClassControl,
         viewToggle
     } = useSeeItContext();
 
     // Redux State Hooks
     const resultsArray = useSelector((state) => state.form.resultsArray);
+    const rowClassControl = useSelector((state) => state.results.rowClassControl);
+    const rowIndex = useSelector((state) => state.results.rowIndex);
+
+    // Redux Dispatch Hooks
+    const setRowClassControl = useDispatch();
+    const setRowIndex = useDispatch();
 
 
     if (viewToggle === 'list') {
@@ -34,10 +37,10 @@ const ResultRow = () => {
                             const slideItemHandle = (index) => {
 
                                 // Sets the index to the element
-                                setSlideClassIndex(index)
+                                setRowIndex(action.setRowIndex(index));
 
                                 // Sets the state that controls the slide class to true/false
-                                setSlideClassControl(!slideClassControl)
+                                setRowClassControl(action.setRowControl(!rowClassControl));
                             }
 
 
@@ -50,7 +53,7 @@ const ResultRow = () => {
 
                                     {/* Row Element */}
                                     < div
-                                        className={`result-row__movie-info ${slideClassIndex === index && slideClassControl ? 'result-row--slide' : null}`}
+                                        className={`result-row__movie-info ${rowIndex === index && rowClassControl ? 'result-row--slide' : null}`}
                                         onClick={() => slideItemHandle(index)} >
 
                                         {/* Avatar */}

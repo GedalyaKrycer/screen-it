@@ -1,20 +1,14 @@
 import React from 'react';
 import './style.css';
-import { useSeeItContext } from '../../utils/SeeItContext';
 import ToolIcon from "../ToolIcon/ToolIcon";
 import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../../store/actions/index';
 
 const ResultTools = (props) => {
 
-    // Imports states from context
-    const {
-        slideClassControl,
-        setSlideClassControl
-    } = useSeeItContext();
-
     // Redux State Hooks
     const resultsArray = useSelector((state) => state.form.resultsArray);
+    const rowClassControl = useSelector((state) => state.results.rowClassControl);
 
     // Redux Dispatch Hooks
     const setModalOpen = useDispatch();
@@ -22,6 +16,7 @@ const ResultTools = (props) => {
     const setResultsArray = useDispatch();
     const setResultEditId = useDispatch();
     const setCurrentResult = useDispatch();
+    const setRowClassControl = useDispatch();
 
 
     // Deletes movie entry
@@ -36,7 +31,7 @@ const ResultTools = (props) => {
         // Sets the new array to state
         setResultsArray(action.storeAllResults(resultsArrayCopy));
 
-        setSlideClassControl(false);
+        setRowClassControl(action.setRowControl(false));
 
     }
 
@@ -59,7 +54,7 @@ const ResultTools = (props) => {
         setModalIdCheck(action.modalIdChecker("editForm"));
 
         // Closes the result row
-        setSlideClassControl(!slideClassControl);
+        setRowClassControl(action.setRowControl((!rowClassControl)));
 
     }
 
