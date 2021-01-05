@@ -1,8 +1,8 @@
 import React from 'react';
 import './style.css';
-import ToolIcon from "../ToolIcon/ToolIcon";
+import ToolIcon from "../../ui/ToolIcon/ToolIcon";
 import { useDispatch, useSelector } from 'react-redux';
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 const ResultTools = (props) => {
 

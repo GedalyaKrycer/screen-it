@@ -1,13 +1,13 @@
 import React from 'react';
 import './style.css';
 
-const FormValidation = ({ nameErrorState, ratingErrorState }) => {
+const FormValidation = (props) => {
 
 
     // Validation message that gets added to the dom if errors return as true
     let validateMessages = null;
 
-    if (nameErrorState || ratingErrorState) {
+    if (props.nameErrorState || props.ratingErrorState) {
         validateMessages = (<p className="validate-errors">Please fill all fields.</p>);
     } else {
         validateMessages = null;

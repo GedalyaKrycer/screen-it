@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useDispatch } from 'react-redux';
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const DeleteAll = () => {

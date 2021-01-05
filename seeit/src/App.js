@@ -1,15 +1,14 @@
 import React from "react";
 import './App.css';
-import Header from './components/Header/Header';
-import Form from './components/Form/Form';
-import FilterSection from './components/FilterSection/FilterSection';
-import ResultRow from './components/ResultRow/ResultRow';
-import ResultCards from './components/ResultCards/ResultCards';
-import Modal from './components/Modal/Modal';
-import DeleteAll from './components/DeleteAll/DeleteAll';
-import ResultsBody from './components/ResultsBody/ResultsBody';
-import ResultsInitialArt from './components/ResultsInitialArt/ResultsInitialArt';
-
+import Header from './components/headerBar/Header/Header';
+import Form from './components/search/Form/Form';
+import SearchSection from './components/search/SearchSection/SearchSection';
+import ResultRow from './components/results/ResultRow/ResultRow';
+import ResultCards from './components/results/ResultCards/ResultCards';
+import Modal from './components/ui/Modal/Modal';
+import DeleteAll from './components/headerBar/DeleteAll/DeleteAll';
+import ResultsBody from './components/results/ResultsBody/ResultsBody';
+import ResultsInitialArt from './components/results/ResultsInitialArt/ResultsInitialArt';
 
 
 
@@ -17,9 +16,9 @@ function App() {
   return (
     <>
       <Header />
-      <FilterSection>
+      <SearchSection>
         <Form />
-      </FilterSection>
+      </SearchSection>
       <ResultsBody>
         <ResultRow />
         <ResultCards />

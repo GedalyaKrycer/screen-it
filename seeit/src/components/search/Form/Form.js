@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars';
-import posterUndefined from '../../img/poster-undefined.jpg';
+import RatingStars from '../../RatingStars/RatingStars';
+import posterUndefined from '../../../img/poster-undefined.jpg';
 import FormValidation from '../FormValidation/FormValidation';
 import axios from 'axios';
 import { useSelector, useDispatch } from "react-redux";
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const Form = () => {

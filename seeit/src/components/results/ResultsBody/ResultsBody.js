@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const ResultsBody = ({ children }) => {

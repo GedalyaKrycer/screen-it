@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
-import Logo from "../Logo/Logo";
-import ToolIcon from "../ToolIcon/ToolIcon";
+import Logo from "../../ui/Logo/Logo";
+import ToolIcon from "../../ui/ToolIcon/ToolIcon";
 import { useDispatch, useSelector } from 'react-redux';
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const Header = () => {
@@ -20,22 +20,6 @@ const Header = () => {
 
     // State to hold the width of the screen
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-
-    // Opens delete modal
-    const openModal = () => {
-
-        // Tells modal to open
-        setModalOpen(action.toggleModal(true));
-
-        // Verifies which modal should open
-        setModalIdCheck(action.modalIdChecker("headerDeleteAll"));
-    }
-
-    // Toggles card/list view
-    const switchView = () => {
-        resultsViewType === 'list' ? setResultsView(action.setResultsView('cards')) : setResultsView(action.setResultsView('list'));
-    }
 
 
     // Use Effect To setting Width Size
@@ -64,6 +48,22 @@ const Header = () => {
         }
 
     }, [windowWidth, setResultsView])
+
+
+    // Opens delete modal
+    const openModal = () => {
+
+        // Tells modal to open
+        setModalOpen(action.toggleModal(true));
+
+        // Verifies which modal should open
+        setModalIdCheck(action.modalIdChecker("headerDeleteAll"));
+    }
+
+    // Toggles card/list view
+    const switchView = () => {
+        resultsViewType === 'list' ? setResultsView(action.setResultsView('cards')) : setResultsView(action.setResultsView('list'));
+    }
 
 
     return (

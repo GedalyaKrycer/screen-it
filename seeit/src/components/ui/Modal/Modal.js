@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import { FaPlus } from "react-icons/fa";
 import { useSelector, useDispatch } from 'react-redux';
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 const Modal = (props) => {
 

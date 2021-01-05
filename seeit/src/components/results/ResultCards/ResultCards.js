@@ -1,10 +1,10 @@
 import React from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars';
+import RatingStars from '../../ui/RatingStars/RatingStars';
 import ResultTools from "../ResultTools/ResultTools";
-import NameGenre from "../NameGenre/NameGenre";
+import NameGenre from "../../ui/NameGenre/NameGenre";
 import { useSelector, useDispatch } from "react-redux";
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const ResultCards = () => {

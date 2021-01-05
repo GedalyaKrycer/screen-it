@@ -1,12 +1,12 @@
 import React from 'react';
 import './style.css';
-import RatingStars from '../RatingStars/RatingStars';
+import RatingStars from '../../ui/RatingStars/RatingStars';
 import { FaPlus } from "react-icons/fa";
 import ResultTools from "../ResultTools/ResultTools";
-import Avatar from "../Avatar/Avatar";
-import NameGenre from "../NameGenre/NameGenre";
+import Avatar from "../../ui/Avatar/Avatar";
+import NameGenre from "../../ui/NameGenre/NameGenre";
 import { useSelector, useDispatch } from "react-redux";
-import * as action from '../../store/actions/index';
+import * as action from '../../../store/actions/index';
 
 
 const ResultRow = () => {

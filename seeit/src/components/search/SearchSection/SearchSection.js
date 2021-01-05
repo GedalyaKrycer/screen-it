@@ -1,11 +1,11 @@
 import React from 'react';
 import './style.css';
-import resultArtDesktop from "../../img/background-desktop.svg";
+import resultArtDesktop from "../../../img/background-desktop.svg";
 import { useSelector } from 'react-redux';
 
 
 
-const FilterSection = ({ children }) => {
+const SearchSection = ({ children }) => {
 
     // React State Hook
     const resultsArray = useSelector((state) => state.form.resultsArray);
@@ -42,4 +42,4 @@ const FilterSection = ({ children }) => {
 
 }
 
-export default FilterSection;
+export default SearchSection;

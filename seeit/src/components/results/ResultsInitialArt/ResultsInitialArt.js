@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import resultArt from "../../img/background-mobile.svg";
+import resultArt from "../../../img/background-mobile.svg";
 import { useSelector } from "react-redux";
 
 const ResultsInitialArt = () => {

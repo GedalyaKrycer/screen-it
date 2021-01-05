@@ -27,7 +27,7 @@ Table Of Contents
 }
 
 .form__select {
-	background-image: url('../../img/caret.svg');
+	background-image: url('../../../img/caret.svg');
 	background-position: right 20px center;
 	background-repeat: no-repeat;
     outline: none;
